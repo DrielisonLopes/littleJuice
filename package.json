@@ -1,7 +1,7 @@
 {
   "name": "littleJuice",
   "version": "1.0.0",
-  "description": "Squad 32 - littleJuice",
+  "description": "Squad 32 - littleJuice. Projeto desenvolvido para organizar o fluxo dos funcionários em época de covid",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
