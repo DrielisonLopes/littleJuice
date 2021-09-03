@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
-    <link rel="icon" type="imagem/png" href="https://spng.pngfind.com/pngs/s/275-2754652_download-svg-download-png-icone-de-laranja-transparent.png" />
+    <link rel="icon" type="imagem/png"
+        href="https://spng.pngfind.com/pngs/s/275-2754652_download-svg-download-png-icone-de-laranja-transparent.png" />
+
+    <!--Fonte Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <title>littleJuice</title>
+
 </head>
+
 <body>
     <header>
         <h1>littleJuice</h1>
     </header>
     <!-- <img src="../assets/logo.svg" alt=""> -->
-    <div>
-        <img class="rectangle" src="../assets/rectangle-orange.svg" alt="">
-        <img class="ellipse" src="../assets/ellipse-blue.svg" alt="">
-    </div>
-    <div>
-        <form action="/action_page.php">
-            <h4>login:</h4>
-            <label for="email">e-mail:</label><br>
-            <input type="text" id="email" name="email" value=""><br>
-            <label for="senha">senha:</label><br>
-            <input type="text" id="senha" name="senha" value=""><br><br>
-            <p>esqueci minha senha</p>
+    <div class="container">
+        <div>
+            <img src="../assets/images-login.svg" alt="" id="img-login">
+        </div>
+        <main>
+            <form action="/action_page.php" id="form-login">
+                <h4 id="title-login">login:</h4>
+                <label for="email">e-mail:</label>
+                <input type="text" id="email" name="email" value="">
+                <label for="senha">senha:</label>
+                <input type="text" id="senha" name="senha" value="">
+                <p><a href="./redefinir-senha.html">esqueci minha senha</a></p>
 
-            <!-- <input type="submit" value="Entrar"> -->
-            <button>Entrar<img src="../assets/rectangle-blue.svg" alt="Entrar"></button>
-            
-            <p>primeira vez por aqui? cadastre-se</p>
-            
-        </form>    
+                <!-- <input type="submit" value="Entrar"> -->
+                <input type="submit" value="Entrar" id="btn-login">
+
+                <p id="cadastre-se"><a href="./cadastro.html">primeira vez por aqui? cadastre-se</a></p>
+
+            </form>
+        </main>
+
     </div>
-    <div>
-    </div>
-    
+
+
     <footer>
-        <h3>FCamara</h3>
+        <a href="https://www.fcamara.com.br/" target="_blank"> 
+            <img src="../assets/logo.svg" alt="logo-fcamara">
+        </a>
     </footer>
 </body>
+
 </html>
