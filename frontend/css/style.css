@@ -54,6 +54,7 @@ input{
     width: 100%;
     margin-top: 1em; 
     font-size: 20px; 
+    color: #FE4400;
 }
 
 /*tirar algum estilo padrão do input*/
@@ -104,7 +105,7 @@ a:hover{
 
 
 footer {
-    background-color: #FE5517;
+    background-color: #FE4400;
     height: 2rem;
     padding: 1rem;
     margin-top: 0.5rem;
