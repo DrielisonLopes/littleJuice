@@ -1,20 +1,55 @@
 * {
     color: #FE5517;
+    margin: 0;
+}
+
+body {
     text-align: center;
 }
 
 footer {
     background-color: #FE5517;
-    /* width: 16rem; */
-    text-align: center;
+    height: 2rem;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 h3{
     color: white;
 }
 
+h4 {
+    margin: 5rem 0 1rem;
+}
+
 button {
     border: none;
     background: none;
+    margin: 1rem;
 }
 
+.ellipse{
+    position: relative;
+}
+
+.rectangle{
+    position: absolute;
+}
+
+form {
+    margin-top: 3rem;
+}
+
+label {
+    padding-right: 11rem;
+    font-weight: bold;
+}
+
+input {
+    border: 1px solid #FE5517;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin: 1rem 0;
+    width: 14rem;
+}
