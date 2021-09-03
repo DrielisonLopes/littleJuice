@@ -1,0 +1,20 @@
+* {
+    color: #FE5517;
+    text-align: center;
+}
+
+footer {
+    background-color: #FE5517;
+    /* width: 16rem; */
+    text-align: center;
+}
+
+h3{
+    color: white;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
