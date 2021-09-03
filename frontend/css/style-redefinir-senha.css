@@ -1,5 +1,5 @@
 html{
-    background-color: #A8A8D0;
+    background-color: #FEBBA2;
     scroll-behavior: smooth;
 }
 
@@ -10,30 +10,29 @@ html{
 }
 
 .container{
-    margin-top: 6vh;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#cadastro{
+#redefinir-senha{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#title-cadastro{
+#title-redefinir-senha{
     font-weight: bold;
     font-size: 30px;
     text-align: center;
     padding: .4em .5em .4em .5em;
     border-radius: 90px 90px 0px 90px;;
     color: #FFFFFF;  
-    background-color: #36357E;
-    width: 200px;
+    background-color: #FE5517;
+    width: 260px;
     cursor: default;
 }
 
@@ -45,7 +44,7 @@ main{
     align-items: center;
 }
 
-#form-cadastro{
+#form-redefinir-senha{
     width: 80%;
 }
 
@@ -55,7 +54,7 @@ label, input{
 }
 
 input{
-    background-color: #A8A8D0;
+    background-color: #FEBBA2;
     border: none;
     border-radius: 0;
     border-bottom: 2px solid #36357E;  
@@ -76,10 +75,10 @@ label{
     font-size: 22px;
 }
 
-#btn-cadastrar{
+#btn-ok{
     margin:auto;
     margin-top: 1em;
-    background-color: #FE5517;
+    background-color: #36357E;
     border-radius: 110px 0px 110px 110px;
     border: 0;
     width: 100px;
@@ -88,13 +87,13 @@ label{
     cursor: pointer;
 }
 
-.voltar{
+#voltar{
     color: #FFFFFF;
-    margin: 0 0 1em 80%;
+    margin: 0 0 0 80%;
     font-size: 18px;
     cursor: pointer;
 }
 
-.voltar:hover{
+#voltar:hover{
     color:#36357E;
 }

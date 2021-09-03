@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="../css/style-cadastro.css">
+    <title>Redefinir Senha</title>
+
+    <link rel="stylesheet" href="../css/style-redefinir-senha.css">
 
     <!--Fonte Montserrat-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
-        <div id="cadastro">
+        <div id="redefinir-senha">
             <header>
-                <h1 id="title-cadastro">cadastro</h1>
+                <h1 id="title-redefinir-senha">redefinir senha</h1>
             </header>
+    
             <main>
-                <form action="" id="form-cadastro">
-                    <label for="nome">nome</label>
-                    <input type="text" id="nome">
-
+                <form action="" id="form-redefinir-senha">
                     <label for="email">email</label>
                     <input type="text" id="email">
-
-
-                    <label for="senha">senha</label>
-                    <input type="text" id="senha">
-
+    
+                    <label for="nova-senha">nova senha</label>
+                    <input type="text" id="nova-senha">
+    
                     <label for="confirmar-senha">confirmar senha</label>
                     <input type="text" id="confirmar-senha">
-
-                    <input type="submit" value="Cadastrar" id="btn-cadastrar">
-
-
+    
+                    <input type="submit" value="ok" id="btn-ok">
+                    
+                    <span id="voltar">voltar</span>
                 </form>
-
-                <span class="voltar">voltar</span>
             </main>
         </div>
     </div>
-
-
+    
 </body>
-
 </html>
