@@ -39,6 +39,7 @@ module.exports = {
     'no-empty-constructor': 'off',
     'no-empty-function': 'off',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn'
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'class-methods-use-this': 'off'
   },
 };
