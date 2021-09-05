@@ -1,5 +1,3 @@
-import { All } from '@nestjs/common';
-import { col } from 'sequelize';
 import { Model } from 'sequelize';
 import { AllowNull, AutoIncrement, Column, PrimaryKey, Table, Unique } from 'sequelize-typescript';
 

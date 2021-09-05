@@ -3,6 +3,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 // import { AppController } from './app.controller';
 // import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { UsersModule } from './users/users.module';
       synchronize: true,    // faz o mapeamento das entidades e cria as tabelas no banco automaticamente
       autoLoadModels: true   // carrega os modelos automaticamente
     }),
-    UsersModule],
+    UsersModule,
+    ScheduleModule],
   // controllers: [],
   // providers: [],
 })
