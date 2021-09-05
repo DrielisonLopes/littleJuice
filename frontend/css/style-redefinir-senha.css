@@ -78,6 +78,7 @@ label{
 #btn-ok{
     margin:auto;
     margin-top: 1em;
+    margin-bottom: 1em;
     background-color: #36357E;
     border-radius: 110px 0px 110px 110px;
     border: 0;
