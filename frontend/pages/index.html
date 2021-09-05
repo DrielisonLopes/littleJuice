@@ -28,12 +28,15 @@
             <img src="../assets/images-login.svg" alt="" id="img-login">
         </div>
         <main>
-            <form action="/action_page.php" id="form-login">
-                <h4 id="title-login">login:</h4>
-                <label for="email">e-mail:</label>
-                <input type="text" id="email" name="email" value="">
-                <label for="senha">senha:</label>
-                <input type="text" id="senha" name="senha" value="">
+            <form action="" id="form-login">
+                <h4 id="title-login">login</h4>
+                
+                <label for="email">e-mail</label>
+                <input type="email" id="email" name="email" value="" required>
+                
+                <label for="senha">senha</label>
+                <input type="password" id="senha" name="senha" value="" required minlength="8">
+                
                 <p><a href="./redefinir-senha.html">esqueci minha senha</a></p>
 
                 <!-- <input type="submit" value="Entrar"> -->

@@ -26,21 +26,21 @@
             <main>
                 <form action="" id="form-cadastro">
                     <label for="nome">nome</label>
-                    <input type="text" id="nome" name="nome">
+                    <input type="text" id="nome" name="nome" required>
 
                     <label for="email">email</label>
-                    <input type="text" id="email" name="email">
+                    <input type="email" id="email" name="email" required>
 
-                    <fieldset>
+                    <fieldset aria-required="true">
                         <legend>filial</legend>
                         <div class="select-filial">
-                            <input type="radio" name="filial" value="1" id="filial-sao-paulo">
+                            <input type="radio" name="filial" value="1" id="filial-sao-paulo" required>
                             <label for="filial-sao-paulo">São Paulo</label>
         
                         </div>
                         
                         <div class="select-filial">
-                            <input type="radio" name="filial" value="2" id="filial-santos">
+                            <input type="radio" name="filial" value="2" id="filial-santos" required>
                             <label for="filial-santos">Santos</label>
                         </div>
                         
@@ -48,10 +48,10 @@
 
 
                     <label for="senha">senha</label>
-                    <input type="text" id="senha" name="senha">
+                    <input type="password" id="senha" name="senha" required minlength="8">
 
                     <label for="confirmar-senha">confirmar senha</label>
-                    <input type="text" id="confirmar-senha" name="confirmar-senha">
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" required minlength="8">
 
                     <input type="submit" value="Cadastrar" id="btn-cadastrar">
 
