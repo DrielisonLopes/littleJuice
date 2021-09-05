@@ -1,5 +1,5 @@
-import { Model } from 'sequelize';
-import { AllowNull, AutoIncrement, Column, PrimaryKey, Table, Unique } from 'sequelize-typescript';
+import { AllowNull, AutoIncrement, Column, HasMany, PrimaryKey, Table, Unique, Model } from 'sequelize-typescript';
+import { Schedule } from 'src/schedule/entities/schedule.entity';
 
 @Table
 export class Users extends Model {
@@ -24,4 +24,7 @@ export class Users extends Model {
     @AllowNull(false)
     @Column
     location: string;
+
+    @HasMany(() => Schedule)
+    schedule: Schedule[];
 }
