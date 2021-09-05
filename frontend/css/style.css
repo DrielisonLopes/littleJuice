@@ -93,6 +93,11 @@ a{
     color: #FFFFFF;
 }
 
+#form-login:invalid #btn-login{
+    opacity: 0.5;
+    cursor: default;
+}
+
 p#cadastre-se{
     text-align: center;
     margin-top: 1em;

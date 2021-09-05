@@ -121,6 +121,11 @@ fieldset div label{
     cursor: pointer;
 }
 
+#form-cadastro:invalid #btn-cadastrar{
+    opacity: 0.5;
+    cursor: default;
+}
+
 #voltar{
     text-decoration: none;
     color: #FFFFFF;
