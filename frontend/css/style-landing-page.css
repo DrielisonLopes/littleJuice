@@ -1,0 +1,28 @@
+body{
+    background-color: #FE4400 ;
+}
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+main{
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#img-landing-page{
+    height: 350px;
+    margin-left: 35%;
+}
+
+#logo{
+    margin-bottom: 6vh;
+
+}
+

@@ -1,8 +1,12 @@
 html {
-    color: #FE4400;
-    margin: 0;
-    padding: 0;
+    scroll-behavior: smooth;
+}
+
+* {
     font-family: Montserrat;
+    padding: 0;
+    margin:0;
+    color: #FE4400;
 }
 
 h1{
@@ -21,8 +25,8 @@ h1{
 
 #img-login{
     display: block;
-    width: 279px;
-    height: 186px;
+    width: 200px;
+    height: 180px;
 }
 
 #title-login{

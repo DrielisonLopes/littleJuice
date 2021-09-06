@@ -1,6 +1,9 @@
 html{
-    background-color: #FEBBA2;
     scroll-behavior: smooth;
+}
+
+body{
+    background-color: #FEBBA2;
 }
 
 * {

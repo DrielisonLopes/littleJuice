@@ -1,6 +1,10 @@
 html{
-    background-color: #A8A8D0;
     scroll-behavior: smooth;
+}
+
+body{
+    background-color: #A8A8D0;
+
 }
 
 * {
