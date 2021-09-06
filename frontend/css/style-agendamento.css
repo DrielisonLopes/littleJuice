@@ -1,0 +1,182 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #A8A8D0;
+
+}
+
+* {
+    font-family: Montserrat;
+    padding: 0;
+    margin:0;
+}
+
+.container{
+    margin-top: 6vh;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#title-cadastro{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding: .4em .5em .4em .5em;
+    border-radius: 90px 90px 0px 90px;;
+    color: #FFFFFF;  
+    background-color: #FE4400;
+    width: 200px;
+    cursor: default;
+}
+
+main{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 6vh;
+}
+
+#form-cadastro{
+    width: 100%;
+}
+
+label, input{
+    display: block;
+    color: #FFFFFF;
+}
+
+input{
+    background-color: #A8A8D0;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #36357E;  
+    width: 100%;
+    margin-top: 1em; 
+    font-size: 20px; 
+}
+
+/*tirar algum estilo padrão do input*/
+input:focus,input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+
+#form-cadastro:invalid #btn-cadastrar{
+    opacity: 0.5;
+    cursor: default;
+}
+
+#voltar{
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 0 0 0 calc(100% - 50.8px);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#voltar:hover{
+    color:#36357E;
+}
+
+
+
+
+
+html {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 125%;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #FFF;
+}
+
+body {
+    min-height: 100vh;
+    /* background: var(--blue-grey-100); */
+}
+
+main {
+    max-width: max-content;
+    margin: 3em auto 0 auto;
+    padding: 1.5em;
+    background-color: #FE885C;
+    border: 2px solid var(--blue-grey-200);
+    border-radius: 8px;
+}
+
+/* For the month */
+.month-indicator {
+    color: var(--blue-grey-700);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* CSS grid used for the dates */
+.day-of-week,
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+/* Styles for the weekday/weekend header */
+.day-of-week {
+    margin-top: 1.25em;
+}
+
+  .day-of-week > * {
+    font-size: 0.7em;
+    color: var(--blue-grey-400);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+  /* Dates */
+.date-grid {
+    margin-top: 0.5em;
+}
+
+  /* Positioning the first day */
+.date-grid button:first-child {
+    grid-column: 6;
+}
+
+/* Style for each day */
+.date-grid button {
+    position: relative;
+    border: 0;
+    width: 4.5ch;
+    height: 4.5ch;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--blue-grey-600);
+}
+
+.date-grid button:hover,
+.date-grid button:focus {
+    outline: none;
+    background-color: var(--blue-grey-050);
+    color: var(--blue-grey-700);
+}
+
+.date-grid button:active,
+.date-grid button.is-selected {
+    background-color: var(--teal-100);
+    color: var(--teal-900);
+}
