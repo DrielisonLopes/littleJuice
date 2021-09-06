@@ -51,7 +51,7 @@ main{
 }
 
 #form-cadastro{
-    width: 90%;
+    width: 100%;
 }
 
 label, input{
@@ -84,7 +84,7 @@ label{
 fieldset{
     border: none;
     margin: 3em 0 0 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
 }
 
@@ -96,21 +96,19 @@ fieldset legend {
 }
 fieldset div{
     display: inline;
-    width: 50%;
 }
 
 fieldset div input{
     display: inline;
-    margin-right: .5em;
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
 }
 
 fieldset div label{
-    margin: 0;
+    margin: 0 5.5vw 0 0;
     display: inline;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 #btn-cadastrar{
