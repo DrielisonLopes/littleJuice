@@ -1,0 +1,46 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #FE4400 ;
+}
+
+* {
+    font-family: Montserrat;
+    padding: 0;
+    margin:0;
+}
+
+header{
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 50px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 69px);
+}
+
+.div-click{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    width: 140px;
+}
+
+.div-click img{
+    width: 140px;
+    height: 140px;
+}
+
+p{
+    text-align: center;
+}
