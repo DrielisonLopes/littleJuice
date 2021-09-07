@@ -31,10 +31,16 @@ menu{
 #opcoes-menu{
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 200px;
     width: 140px;
     background-color: #FE885C;
+    border-radius: 20px;
+}
+
+#opcoes-menu p{
+    background-color: #FEBBA2;
+    padding: .5em;
     border-radius: 20px;
 }
 
