@@ -19,8 +19,10 @@ export class UsersService {
     return this.usersModel.findAll();
   }
 
-  async findById(id: string): Promise <Users> {
-    return this.usersModel.findByPk(id, { rejectOnEmpty: true});
+  async findById(id: number): Promise <Users> {
+    return this.usersModel.findByPk(id, { 
+      rejectOnEmpty: true,
+    });
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
