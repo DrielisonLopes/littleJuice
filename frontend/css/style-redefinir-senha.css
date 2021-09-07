@@ -1,15 +1,5 @@
-html{
-    scroll-behavior: smooth;
-}
-
 body{
     background-color: #FEBBA2;
-}
-
-* {
-    font-family: Montserrat;
-    padding: 0;
-    margin:0;
 }
 
 .container{
@@ -94,16 +84,4 @@ label{
 #form-redefinir-senha:invalid #btn-ok{
     opacity: 0.5;
     cursor: default;
-}
-
-#voltar{
-    text-decoration: none;
-    color: #FFFFFF;
-    margin: 0 0 0 calc(100% - 50.8px);
-    font-size: 18px;
-    cursor: pointer;
-}
-
-#voltar:hover{
-    color:#36357E;
 }

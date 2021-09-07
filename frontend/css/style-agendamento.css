@@ -1,16 +1,6 @@
-html{
-    scroll-behavior: smooth;
-}
-
 body{
     background-color: #A8A8D0;
 
-}
-
-* {
-    font-family: Montserrat;
-    padding: 0;
-    margin:0;
 }
 
 .container{
@@ -79,18 +69,6 @@ input:focus,input:active {
 #form-cadastro:invalid #btn-cadastrar{
     opacity: 0.5;
     cursor: default;
-}
-
-#voltar{
-    text-decoration: none;
-    color: #FFFFFF;
-    margin: 0 0 0 calc(100% - 50.8px);
-    font-size: 18px;
-    cursor: pointer;
-}
-
-#voltar:hover{
-    color:#36357E;
 }
 
 
