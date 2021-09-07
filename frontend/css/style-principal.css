@@ -12,10 +12,10 @@ body{
     margin:0;
 }
 
-header{
-    margin-left: 1em;
-    margin-top: 1em;
-    width: 50px;
+#img-menu{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
 }
 
 main{
@@ -34,6 +34,7 @@ main{
     color: #FFFFFF;
     font-size: 20px;
     width: 140px;
+    cursor: pointer;
 }
 
 .div-click img{
@@ -43,4 +44,29 @@ main{
 
 p{
     text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+menu{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+#menu{
+    display: none;
+}
+
+#opcoes-menu{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 200px;
+    width: 140px;
+    background-color: #FE885C;
+    border-radius: 20px;
 }
