@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-// import { AppController } from './app.controller';
-// import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ScheduleModule } from './schedule/schedule.module';
 
@@ -17,8 +15,6 @@ import { ScheduleModule } from './schedule/schedule.module';
       autoLoadModels: true   // carrega os modelos automaticamente
     }),
     UsersModule,
-    ScheduleModule],
-  // controllers: [],
-  // providers: [],
+    ScheduleModule]
 })
 export class AppModule {}
