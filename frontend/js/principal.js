@@ -13,3 +13,5 @@ function showMenu() {
         menu.style.display = "none"
     }
 }
+
+imgMenu.onclick= showMenu;
