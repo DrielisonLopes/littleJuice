@@ -1,26 +1,51 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/sequelize';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { Users } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
+  constructor(
+    @InjectModel(Users)
+    private usersModel: typeof Users,
+  ) {}
+
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    return this.usersModel.create(createUserDto);
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async findAll(): Promise <Users[]> {
+    return this.usersModel.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findById(id: string): Promise <Users> {
+    return this.usersModel.findByPk(id, { rejectOnEmpty: true});
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const user = await this.usersModel.findByPk(id, {
+      rejectOnEmpty: true,
+    })
+
+    user.name = updateUserDto.name;
+    user.email = updateUserDto.email;
+    user.location = updateUserDto.location;
+
+    await user.save();
+
+    return user;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number) {
+    await this.usersModel.findByPk(id, {
+      rejectOnEmpty: true,
+    });
+
+    this.usersModel.destroy({
+      where: {
+        id,
+      },
+    });
   }
 }

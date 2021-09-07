@@ -3,6 +3,9 @@ import { Schedule } from 'src/schedule/entities/schedule.entity';
 
 @Table
 export class Users extends Model {
+    static findById(arg0: { where: { id: string; }; }): Users | PromiseLike<Users> {
+      throw new Error('Method not implemented.');
+    }
     @AutoIncrement
     @PrimaryKey
     @Column

@@ -1,9 +1,16 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/sequelize';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
+import { Schedule } from './entities/schedule.entity';
 
 @Injectable()
 export class ScheduleService {
+  constructor(
+    @InjectModel(Schedule)
+    private scheduleModel: typeof Schedule,
+  ) {}
+
   create(createScheduleDto: CreateScheduleDto) {
     return 'This action adds a new schedule';
   }
