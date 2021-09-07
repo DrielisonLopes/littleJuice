@@ -19,6 +19,7 @@ export class Schedule extends Model {
     date: Date;
 
     @ForeignKey(() => Users)
+    @AllowNull(false)
     @Column
     id_users: number;
 

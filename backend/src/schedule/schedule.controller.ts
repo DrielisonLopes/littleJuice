@@ -2,8 +2,6 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
-import { Users } from 'src/users/entities/user.entity';
-import { scheduled } from 'rxjs';
 
 @Controller('schedule')
 export class ScheduleController {

@@ -15,11 +15,11 @@ export class UsersService {
     return this.usersModel.create(createUserDto);
   }
 
-  async findAll(): Promise <Users[]> {
-    return this.usersModel.findAll();
+  findAll() {
+      return this.usersModel.findAll();
   }
 
-  async findById(id: number): Promise <Users> {
+  findById(id: number) {
     return this.usersModel.findByPk(id, { 
       rejectOnEmpty: true,
     });
