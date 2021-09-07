@@ -7,10 +7,15 @@ import { ScheduleModule } from './schedule/schedule.module';
   imports: [
     SequelizeModule.forRoot({
       dialect: 'postgres',
-      host: 'tuffi.db.elephantsql.com',
-      username: 'hkylinrv',
-      password: 'gbm30E8bAYscYz0teACZF8ujzJY4ESFG',
-      database: 'hkylinrv',
+      // host: 'tuffi.db.elephantsql.com',
+      // username: 'hkylinrv',
+      // password: 'gbm30E8bAYscYz0teACZF8ujzJY4ESFG',
+      // database: 'hkylinrv',
+      host: 'localhost',
+      username: 'postgres',
+      password: '1032430x',
+      database: 'littleJuice',
+      port: 5432,
       synchronize: true,    // faz o mapeamento das entidades e cria as tabelas no banco automaticamente
       autoLoadModels: true   // carrega os modelos automaticamente
     }),
