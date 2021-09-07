@@ -3,7 +3,7 @@ const menu = document.getElementById("menu");
 
 
 function showMenu() {
-    if (menu.style.display == "none") {
+    if (menu.style.display == "none" || !menu.style.display) {
         menu.style.removeProperty("display");
         menu.style.display = "block";
 
