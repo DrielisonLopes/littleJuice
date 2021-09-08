@@ -9,7 +9,7 @@ body{
 
 .container{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +31,8 @@ h1{
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
 }
 
 #div-editar-dados{
@@ -38,6 +40,7 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 6vh;
 }
 
 h2{
@@ -84,4 +87,8 @@ button{
     height: 60px;
     font-size: 20px;
     color: #FFFFFF;
+}
+
+#voltar{
+    margin-bottom: 6vh;
 }
