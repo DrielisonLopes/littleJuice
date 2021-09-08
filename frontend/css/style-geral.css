@@ -50,7 +50,19 @@ menu{
 }
 
 #opcoes-menu p:nth-child(1) a{
-    border-top: #FFFFFF 2px solid;
+    border-top: #FFFFFF .1px solid;
+}
+
+/*tirar algum estilo padrão do input*/
+input:focus,input:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/*tirar algum estilo padrão do select*/
+select:focus,select:active {
+    outline: none;
+    box-shadow: none;
 }
 
 #voltar{

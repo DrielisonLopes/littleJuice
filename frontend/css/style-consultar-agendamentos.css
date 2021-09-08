@@ -57,9 +57,3 @@ select{
     font-weight: 600;
     border-radius: 15px;
 }
-
-/*tirar algum estilo padrão do input*/
-select:focus,select:active {
-    outline: none;
-    box-shadow: none;
-}

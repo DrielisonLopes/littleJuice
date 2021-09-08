@@ -1,0 +1,87 @@
+body{
+    background-color: #A8A8D0;
+    color: #FFFFFF;
+    background-image: url("../assets/balao-orange.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 448px 427px;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+h1{
+    background-color: #FE4400;
+    border-radius: 40px 40px 0 40px;
+    padding: .5em;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#div-editar-dados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2{
+    background-color: #5251A2;
+    border-radius: 40px 40px 40px 40px;
+    font-size: 24px;
+    padding: .5em;
+}
+
+input, label, select, button{
+    display: block;
+    color: #262561;
+}
+
+input, select{
+    margin-top: 4em;
+    margin-bottom: .5em;
+    border: none;
+    font-size: 20px;
+    padding: 0 .3em 0 .3em;
+    border-radius: 20px;
+}
+
+input{
+    width: 286px;
+    height: 34px;
+}
+
+select{
+    height: 27px;
+}
+
+label{
+    font-size: 19px;
+    color: #262561;
+}
+
+button{
+    border: none;
+    margin-top: 5em;
+    background-color: #5251A2;
+    border-radius: 40px 40px 0 40px;
+    width: 230px;
+    height: 60px;
+    font-size: 20px;
+    color: #FFFFFF;
+}

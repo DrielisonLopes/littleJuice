@@ -60,12 +60,6 @@ input{
     font-size: 20px; 
 }
 
-/*tirar algum estilo padrão do input*/
-input:focus,input:active {
-    outline: none;
-    box-shadow: none;
-}
-
 label{
     margin-top: 2em;
     font-weight: bold;
