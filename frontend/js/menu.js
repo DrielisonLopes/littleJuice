@@ -1,5 +1,5 @@
 const imgMenu = document.getElementById("img-menu");
-const menu = document.getElementById("menu");
+const menu = document.getElementById("div-menu");
 
 
 function showMenu() {
