@@ -82,6 +82,11 @@ label a{
     color: #262561;
 }
 
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 button{
     border: none;
     margin-top: 40px;

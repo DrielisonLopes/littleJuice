@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir e-mail</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style-geral.css">
+    <link rel="stylesheet" href="../css/style-editar-senha.css">
+    
+    <link rel="icon" type="imagem/png"
+        href="https://spng.pngfind.com/pngs/s/275-2754652_download-svg-download-png-icone-de-laranja-transparent.png" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="redefinir-senha">
+            <header>
+                <h1 id="title-redefinir-senha">redefinir senha</h1>
+            </header>
+
+            <main>
+                <form action="" id="form-redefinir-senha">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">e-mail</label>
+
+                    <input type="password" id="senha" name="senha" required minlength="8">
+                    <label for="senha">nova senha</label>
+
+                    <input type="password" name="confirmar-senha" id="confirmar-senha" required>
+                    <label for="confirmar-senha">confirmar nova senha</label>
+
+                    <input type="submit" value="ok" id="btn-ok">
+
+                    <a id="voltar" href="./editar-dados.html">voltar</a>
+                </form>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+<script src="../js/validar-senhas.js"></script>
+
+
+</html>
