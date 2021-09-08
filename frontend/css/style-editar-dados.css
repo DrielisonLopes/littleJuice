@@ -75,12 +75,16 @@ select{
 
 label{
     font-size: 19px;
+}
+
+label a{
+    text-decoration: none;
     color: #262561;
 }
 
 button{
     border: none;
-    margin-top: 5em;
+    margin-top: 40px;
     background-color: #5251A2;
     border-radius: 40px 40px 0 40px;
     width: 230px;
