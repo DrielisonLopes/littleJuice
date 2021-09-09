@@ -15,12 +15,21 @@ export class ScheduleService {
     return this.scheduleModel.create(createScheduleDto);
   }
 
-  async findAll(): Promise <Schedule[]> {
+  findAll() {
     return this.scheduleModel.findAll();
   }
 
-  async findById(id: number) {
+  findById(id: number) {
     return this.scheduleModel.findByPk(id, {
+      rejectOnEmpty: true,
+    });
+  }
+
+  findById_Users(id_users: number) {
+    return this.scheduleModel.findOne({
+      where: {
+        id_users,
+      },
       rejectOnEmpty: true,
     });
   }

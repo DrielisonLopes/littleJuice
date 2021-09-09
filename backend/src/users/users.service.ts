@@ -25,6 +25,15 @@ export class UsersService {
     });
   }
 
+  async findByName(name: string) {
+    return await this.usersModel.findOne({
+      where: {
+        name: name,
+      },
+      rejectOnEmpty: true,
+    })
+  }
+
   async update(id: number, updateUserDto: UpdateUserDto) {
     const user = await this.usersModel.findByPk(id, {
       rejectOnEmpty: true,
