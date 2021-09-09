@@ -6,6 +6,10 @@ h1{
     text-align: center;
 }
 
+header{
+    display: none;
+}
+
 .container{
     width: 100vw;
     height: 100%;
@@ -18,12 +22,12 @@ h1{
 #div-img-login{
     display: flex;
     flex-direction: row-reverse;
-    margin: .5em .5em 0 0;
+    margin: .5em 1em 0 0;
 }
 
 #img-login{
-    width: 200px;
-    height: 180px;
+    width: 220px;
+    height: 200px;
 }
 
 #title-login{
@@ -53,13 +57,13 @@ input{
     border-radius: 0;
     border-bottom: 2px solid #FE4400;  
     width: 100%;
-    margin-top: 1em; 
+    margin-top: 2em; 
     font-size: 20px; 
     color: #FE4400;
 }
 
 label{
-    margin-top: 2em;
+    margin-top: .3em;
     font-weight: bold;
     font-size: 22px;
 }
@@ -72,7 +76,8 @@ p{
 a{
     font-size: 16px;
     text-decoration: none;
-    color: #404099;
+    color: #2A2962;
+    font-weight: 500;
 }
 
 #btn-login{
@@ -98,10 +103,6 @@ p#cadastre-se{
     margin-top: 1em;
 }
 
-a:hover{
-    color:#36357E;
-}
-
 footer {
     background-color: #FE4400;
     height: 3rem;
@@ -110,4 +111,74 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+
+@media only screen and (min-width: 768px){
+
+    header{
+        display: block;
+        margin: 10vh 0 0 10vh;
+    }
+
+    h1{
+        color: #404099;
+    }
+
+    #div-img-login{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #form-login{
+        width: 60%;
+        margin-bottom: 10vh;
+    }
+
+    input{
+        width: 100%;
+        border-color: #404099;
+    }
+
+    #senha{
+        width: 70%
+    }
+
+    label{
+        color: #404099;
+    }
+
+    #div-senha-redf-senha{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #label-senha{
+        display: inline;
+    }
+
+    #link-redef-senha{
+        display: inline;
+        font-size: 18px;
+    }
+
+    a{
+        font-size:18px;
+    }
+
+    #link-redef-senha a{
+        color: #D03800;
+    }
+
+    #btn-login{
+        margin-top: 40px;
+    }
+
+    footer{
+        display: none;
+    }
+
+   
 }
