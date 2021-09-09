@@ -1,29 +1,22 @@
 body{
-    background-color: #A8A8D0;
-
+    background-color: #FEBBA2;
+    width: 100%;
 }
 
-.container{
-    margin-top: 6vh;
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#cadastro{
+main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
 }
 
-#title-cadastro{
+#title-agendar{
     font-weight: bold;
     font-size: 30px;
     text-align: center;
-    padding: .4em .5em .4em .5em;
+    padding: .1em .2em .1em .2em;
     border-radius: 90px 90px 0px 90px;;
     color: #FFFFFF;  
     background-color: #FE4400;
@@ -31,130 +24,61 @@ body{
     cursor: default;
 }
 
-main{
-    width:90%;
+
+form{
+    margin-top: 4vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding-bottom: 6vh;
 }
 
-#form-cadastro{
-    width: 100%;
+#calendario{
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 50%;
+    background-color: #A8A8D0;
 }
 
-label, input{
-    display: block;
+#select-unidade, #input-data{
+    border-radius: 15px;
+    text-align: center;
+    padding: .2em;
+}
+
+#select-unidade{
+    background-color: #f6d8cd;
+    color: #2A2962;
+    width: 114px;
+    font-size: 19px;
+}
+
+#input-data{
+    margin-top: 5vh;
+    background-color:#404099;
+    color: #FFFFFF;
+    font-size: 19px;
+    border: none;
+}
+
+#btn-agendar{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #FE4400;
+    border-radius: 110px 0px 110px 110px;
+    border: 0;
+    width:88px;
+    height: 88px;
+    font-size: 19px;
+    cursor: pointer;
     color: #FFFFFF;
 }
 
-input{
-    background-color: #A8A8D0;
-    border: none;
-    border-radius: 0;
-    border-bottom: 2px solid #36357E;  
-    width: 100%;
-    margin-top: 1em; 
-    font-size: 20px; 
-}
-
-/*tirar algum estilo padrão do input*/
-input:focus,input:active {
-    outline: none;
-    box-shadow: none;
-}
-
-
-#form-cadastro:invalid #btn-cadastrar{
+#form-agendar:invalid #btn-agendar{
     opacity: 0.5;
     cursor: default;
-}
-
-
-
-
-
-html {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 125%;
-    line-height: 1.4;
-    font-weight: 400;
-    color: #FFF;
-}
-
-body {
-    min-height: 100vh;
-    /* background: var(--blue-grey-100); */
-}
-
-main {
-    max-width: max-content;
-    margin: 3em auto 0 auto;
-    padding: 1.5em;
-    background-color: #FE885C;
-    border: 2px solid var(--blue-grey-200);
-    border-radius: 8px;
-}
-
-/* For the month */
-.month-indicator {
-    color: var(--blue-grey-700);
-    text-align: center;
-    font-weight: 500;
-}
-
-/* CSS grid used for the dates */
-.day-of-week,
-.date-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
-
-/* Styles for the weekday/weekend header */
-.day-of-week {
-    margin-top: 1.25em;
-}
-
-  .day-of-week > * {
-    font-size: 0.7em;
-    color: var(--blue-grey-400);
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    font-variant: small-caps;
-    text-align: center;
-}
-
-  /* Dates */
-.date-grid {
-    margin-top: 0.5em;
-}
-
-  /* Positioning the first day */
-.date-grid button:first-child {
-    grid-column: 6;
-}
-
-/* Style for each day */
-.date-grid button {
-    position: relative;
-    border: 0;
-    width: 4.5ch;
-    height: 4.5ch;
-    border-radius: 50%;
-    background-color: transparent;
-    color: var(--blue-grey-600);
-}
-
-.date-grid button:hover,
-.date-grid button:focus {
-    outline: none;
-    background-color: var(--blue-grey-050);
-    color: var(--blue-grey-700);
-}
-
-.date-grid button:active,
-.date-grid button.is-selected {
-    background-color: var(--teal-100);
-    color: var(--teal-900);
 }
