@@ -68,7 +68,10 @@ select:focus,select:active {
 #voltar{
     text-decoration: none;
     color: #2A2962;
-    margin: 0 0 0 calc(100% - 54px);
+    margin: 0 0 0 calc(98% - 54px);
+    padding-bottom: 0.5rem;
     font-size: 19px;
     cursor: pointer;
+    /* position:absolute; */
+    bottom:0; 
 }
