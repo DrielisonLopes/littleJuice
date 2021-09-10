@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar dados</title>
+
+        <!--CSS-->
+        <link rel="stylesheet" href="../css/style-geral.css">
+        <link rel="stylesheet" href="../css/style-suporte.css">
+
+        <link rel="icon" type="imagem/png"
+        href="https://spng.pngfind.com/pngs/s/275-2754652_download-svg-download-png-icone-de-laranja-transparent.png" />
+
+</head>
+<body>
+    <menu id="menu-container">
+        <img src="../assets/menu.svg" alt="menu" id="img-menu">
+
+        <div id="div-menu">
+            <div id="opcoes-menu">
+                <p><a>editar dados</a></p>
+                <p><a>suporte</a></p>
+                <p><a href="../pages/login.html">sair</a></p>
+            </div>
+        </div>
+    </menu>
+
+    <div class="container">
+        <main>
+            <h1>editar meus dados</h1>
+
+            <div id="div-editar-dados">
+                <h2>nome do usuário aqui</h2>
+
+                <input type="email" id="email" name="email" required>     
+                <label for="email"><a href="./redefinir-email.html">trocar e-mail</a></label>
+
+                <a href="./editar-senha.html"><button id="btn-redefinir-senha">redefinir senha</button></a>
+            </div>
+
+        </main>
+    </div>
+    
+        <footer>
+            <a id="voltar" href="./principal.html">voltar</a>
+        </footer>
+        
+</body>
+
+<script src="../js/validar-senhas.js"></script>
+<script src="../js/menu.js"></script>
+
+</html>
