@@ -203,6 +203,7 @@ form{
         justify-content: space-around;
         align-items: center;
         width: 50%;
+        margin: 0 2em 0 2em;
     }
 
     #title-consultar-agendamentos{
