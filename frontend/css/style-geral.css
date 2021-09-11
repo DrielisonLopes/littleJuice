@@ -101,6 +101,10 @@ input{
     cursor: pointer;
 }
 
+input[type="email"], input[type="password"]{
+    cursor: text;
+}
+
 select{
     cursor: pointer;
 }
@@ -117,11 +121,16 @@ select:focus,select:active {
     box-shadow: none;
 }
 
+footer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
 #voltar{
     text-decoration: none;
     color: #2A2962;
-    margin: 0 0 0 calc(98% - 54px);
     padding-bottom: 0.5rem;
+    margin-right: 1em;
     font-size: 19px;
     cursor: pointer;
     /* position:absolute; */
