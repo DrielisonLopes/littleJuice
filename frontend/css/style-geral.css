@@ -13,6 +13,14 @@ html{
     margin:0;
 }
 
+span{
+    cursor: default;
+}
+
+a {
+    cursor: pointer;
+}
+
 #img-menu{
     cursor: pointer;
     width: 40px;
@@ -27,6 +35,10 @@ menu{
 #div-menu{
     display: none;
     position: fixed;
+}
+
+#img-menu{
+    cursor: pointer;
 }
 
 #opcoes-menu{
@@ -52,6 +64,45 @@ menu{
 
 #opcoes-menu p:nth-child(1) a{
     border-top: #FFFFFF .1px solid;
+}
+
+
+#div-config{
+    display: none;
+    position: fixed;
+}
+
+#img-config{
+    cursor: pointer;
+}
+
+#opcoes-config{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 170px;
+    width: 180px;
+    background-color: #A8A8D0;
+    box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    border-radius: 0px 0px 20px 0px;
+}
+
+#opcoes-config p a{
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+input{
+    cursor: pointer;
+}
+
+select{
+    cursor: pointer;
 }
 
 /*tirar algum estilo padrão do input*/

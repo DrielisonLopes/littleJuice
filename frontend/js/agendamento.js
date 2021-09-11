@@ -3,7 +3,7 @@ data.min = new Date().toLocaleDateString().split("/").reverse().join("-");
 
 
 //Lógica para desktop
-if(window.screen.width >= 768){
+if (window.screen.width >= 768) {
 
     //Renderização das informações do dia selecionado
     const inputData = document.getElementById("input-data")
@@ -16,50 +16,50 @@ if(window.screen.width >= 768){
     informacoesDia.style.display = "none";
 
 
-    inputData.oninvalid = () =>{
+    inputData.oninvalid = () => {
         informacoesDia.style.removeProperty("display")
-        informacoesDia.style.display ="none";
+        informacoesDia.style.display = "none";
     }
 
-    inputSaoPaulo.oninvalid = () =>{
+    inputSaoPaulo.oninvalid = () => {
         informacoesDia.style.removeProperty("display")
-        informacoesDia.style.display ="none";
+        informacoesDia.style.display = "none";
     }
 
-    inputSantos.oninvalid = () =>{
+    inputSantos.oninvalid = () => {
         informacoesDia.style.removeProperty("display")
-        informacoesDia.style.display ="none";
+        informacoesDia.style.display = "none";
     }
 
-    if(inputData.value){
+    if (inputData.value) {
         informacoesDia.style.removeProperty("display")
-        informacoesDia.style.display ="flex";
+        informacoesDia.style.display = "flex";
     }
 
-    inputSaoPaulo.oninput = () =>{
-        if(informacoesDia.style.display == "flex"){
+    inputSaoPaulo.oninput = () => {
+        if (informacoesDia.style.display == "flex") {
             return;
-        } else if(inputData.value){
+        } else if (inputData.value) {
             informacoesDia.style.removeProperty("display")
-            informacoesDia.style.display ="flex";
+            informacoesDia.style.display = "flex";
         }
     }
 
-    inputSantos.oninput = () =>{
-        if(informacoesDia.style.display == "flex"){
+    inputSantos.oninput = () => {
+        if (informacoesDia.style.display == "flex") {
             return;
-        } else if(inputData.value){
+        } else if (inputData.value) {
             informacoesDia.style.removeProperty("display")
-            informacoesDia.style.display ="flex";
+            informacoesDia.style.display = "flex";
         }
     }
 
-    if(!inputData.value){
-        inputSaoPaulo.setAttribute("disabled","disabled");
-        inputSantos.setAttribute("disabled","disabled");
+    if (!inputData.value) {
+        inputSaoPaulo.setAttribute("disabled", "disabled");
+        inputSantos.setAttribute("disabled", "disabled");
     }
 
-    inputData.oninput = ()=>{
+    inputData.oninput = () => {
         inputSaoPaulo.removeAttribute("disabled");
         inputSantos.removeAttribute("disabled");
     }
@@ -69,7 +69,7 @@ if(window.screen.width >= 768){
     //Mudança de elementos
     const titleAgendar = document.getElementById("title-agendar");
     const titleConsultarAgendamentos = document.getElementById
-    ("title-consultar-agendamentos");
+        ("title-consultar-agendamentos");
     const container1 = document.getElementById("container1");
     const container2 = document.getElementById("container2");
     const divAgendamentos = document.getElementById("div-agendamentos");
@@ -77,14 +77,14 @@ if(window.screen.width >= 768){
     titleAgendar.addEventListener("click", addContent);
     titleConsultarAgendamentos.addEventListener("click", addContent2);
 
-    window.onload = ()=>{
+    window.onload = () => {
         titleAgendar.style.backgroundColor = "#FE4400"
     }
-    function addContent(){
+    function addContent() {
         titleConsultarAgendamentos.style.removeProperty("background-color");
         titleAgendar.style.removeProperty("background-color");
         titleAgendar.style.backgroundColor = "#FE4400";
-        
+
         container1.style.removeProperty("display");
         container1.style.display = "flex"
         container2.style.removeProperty("display");
@@ -93,8 +93,8 @@ if(window.screen.width >= 768){
         divAgendamentos.style.display = "none";
 
     }
-    
-    function addContent2(){
+
+    function addContent2() {
         titleAgendar.style.removeProperty("background-color");
         titleConsultarAgendamentos.style.removeProperty("background-color");
         titleConsultarAgendamentos.style.backgroundColor = "#FE4400";
@@ -112,18 +112,37 @@ if(window.screen.width >= 768){
     //Agendamentos futuros e anteriores
     const selectFuturos = document.getElementById("select-futuros");
     const selectAnteriores = document.getElementById("select-anteriores");
-    
+
     selectFuturos.addEventListener("click", addBackgroundFuturos)
     selectAnteriores.addEventListener("click", addBackgroundAnteriores)
 
-    function addBackgroundFuturos(){
+    function addBackgroundFuturos() {
         selectAnteriores.style.removeProperty("background-color")
         selectFuturos.style.backgroundColor = "#FFFFFF"
     }
-    
-    function addBackgroundAnteriores(){
+
+    function addBackgroundAnteriores() {
         selectFuturos.style.removeProperty("background-color")
         selectAnteriores.style.backgroundColor = "#FFFFFF"
     }
+
+
+    const imgConfig = document.getElementById("img-config");
+    const config = document.getElementById("div-config");
+
+
+    function showconfig() {
+        if (config.style.display == "none" || !config.style.display) {
+            config.style.removeProperty("display");
+            config.style.display = "block";
+
+
+        } else {
+            config.style.removeProperty("display");
+            config.style.display = "none"
+        }
+    }
+
+    imgConfig.onclick = showconfig;
 
 }
