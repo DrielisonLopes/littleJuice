@@ -4,6 +4,7 @@
 
 h1{
     text-align: center;
+    box-shadow: none;
 }
 
 header{
@@ -134,7 +135,7 @@ footer {
     #form-login{
         width: 60%;
         margin-bottom: 10vh;
-    }
+    }    
 
     input{
         width: 100%;
@@ -180,5 +181,4 @@ footer {
         display: none;
     }
 
-   
 }
