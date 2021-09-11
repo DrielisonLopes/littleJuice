@@ -260,10 +260,10 @@ form{
     #filtrar-agendamentos{
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
-    #select-ano, #select-mes{
+    #select-ano, #select-mes, #select-unidade-agendada{
         background-color: #A8A8D0;
         border-radius: 30px;
         padding: .3em;
