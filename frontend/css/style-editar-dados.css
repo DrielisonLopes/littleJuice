@@ -9,7 +9,7 @@ body{
 
 .container{
     width: 100vw;
-    min-height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
 }
@@ -27,12 +27,14 @@ main{
 h1{
     background-color: #FE4400;
     border-radius: 40px 40px 0 40px;
-    padding: .5em;
-    font-size: 30px;
+    width: 70%;
+    padding: .5em 0.1rem;
+    font-size: 25px;
     font-weight: bold;
     text-align: center;
     margin-top: 6vh;
-    margin-bottom: 6vh;
+    margin-bottom: 16vh;
+    margin-left: 14%;
 }
 
 #div-editar-dados{
@@ -48,6 +50,10 @@ h2{
     border-radius: 40px 40px 40px 40px;
     font-size: 24px;
     padding: .5em;
+}
+
+img {
+    opacity: 0.5;
 }
 
 input, label, select, button{
@@ -96,6 +102,7 @@ button{
     height: 60px;
     font-size: 20px;
     color: #FFFFFF;
+    box-shadow: -4px -11px 0px 1px #FE4400, 0px 4px 4px 4px rgba(0,0,0,0.31);;
 }
 
 #voltar{
