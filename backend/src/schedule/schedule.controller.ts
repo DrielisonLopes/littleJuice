@@ -2,29 +2,39 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, Query } fr
 import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
+import { Schedule } from './entities/schedule.entity';
+import { DATEONLY } from 'sequelize';
 
 @Controller('schedule')
 export class ScheduleController {
   constructor(private readonly scheduleService: ScheduleService) {}
-
-  @Post()
-  create(@Body() createScheduleDto: CreateScheduleDto) {
-    this.scheduleService.create(createScheduleDto);
-  }
 
   @Get()
   findAll() {
     return this.scheduleService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.scheduleService.findById(+id);
+  @Get('user')
+  findByUsers(@Query('id_users') id_users: number) {
+    Schedule.findOne().then((schedule) => {
+      schedule.id_users = id_users
+    })
+    return this.scheduleService.findById_Users(id_users);
   }
 
-  @Get()
-  findById_Users(@Query('id_users') id_users: string) {
-    return this.scheduleService.findById_Users(+id_users);
+  @Get('count')
+  async countAllForDateAndLocation(@Query('date') date: typeof Date, @Query('location_schedule') location_schedule: string) {
+    return this.scheduleService.countAllForDateAndLocation(date, location_schedule);
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: number) {
+    return this.scheduleService.findById(id);
+  }
+
+  @Post()
+  create(@Body() createScheduleDto: CreateScheduleDto) {
+    this.scheduleService.create(createScheduleDto);
   }
   
   @Patch(':id')

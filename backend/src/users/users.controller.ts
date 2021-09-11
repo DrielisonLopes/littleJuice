@@ -9,21 +9,29 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
+  findAll(){
+    return this.usersService.findAll();
+  }
+  
+  @Get('email')
+  findByEmail(@Query('email') email: string) {
+    Users.findOne().then((users) => {
+      users.email = email;
+    })
+    return this.usersService.findByEmail(email);
+  }
+
+  @Get('name')
   findByName(@Query('name') name: string) {
     Users.findOne().then((users) => {
-      users.name = name;
+      users.name = name
     })
     return this.usersService.findByName(name);
   }
-  
-  @Get('all')
-  findAll(@Query('all') id: number){
-    return this.usersService.findAll();
-  }
 
   @Get(':id')
-  findById(@Param('id') id: string) {
-    return this.usersService.findById(+id);
+  findById(@Param('id') id: number): Promise<Users> {
+    return this.usersService.findById(id);
   }
 
   @Post()
@@ -32,8 +40,8 @@ export class UsersController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.update(+id, updateUserDto);
+  update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.update(id, updateUserDto);
   }
 
   @HttpCode(204)

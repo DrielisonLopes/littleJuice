@@ -11,12 +11,26 @@ export class ScheduleService {
     private scheduleModel: typeof Schedule,
   ) {}
 
-  create(createScheduleDto: CreateScheduleDto) {
-    return this.scheduleModel.create(createScheduleDto);
-  }
-
   findAll() {
     return this.scheduleModel.findAll();
+  }
+
+  async findById_Users(id_users: number) {
+    return await this.scheduleModel.findOne({
+      where: {
+        id_users,
+      },
+      rejectOnEmpty: true,
+    })
+  }
+
+  async countAllForDateAndLocation(date: typeof Date, location_schedule: string) {
+    await Schedule.findAll({
+      where: {
+        date: typeof Date,
+        location_schedule: location_schedule,
+      }
+    })
   }
 
   findById(id: number) {
@@ -25,13 +39,8 @@ export class ScheduleService {
     });
   }
 
-  findById_Users(id_users: number) {
-    return this.scheduleModel.findOne({
-      where: {
-        id_users,
-      },
-      rejectOnEmpty: true,
-    });
+  create(createScheduleDto: CreateScheduleDto) {
+    return this.scheduleModel.create(createScheduleDto);
   }
 
   async update(id: number, updateScheduleDto: UpdateScheduleDto) {

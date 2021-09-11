@@ -3,6 +3,10 @@ import { Schedule } from 'src/schedule/entities/schedule.entity';
 
 @Table
 export class Users extends Model {
+    static find: any;
+    static findbyName(arg0: { where: { name: string; }; rejectOnEmpty: boolean; }) {
+      throw new Error('Method not implemented.');
+    }
     static findById(arg0: { where: { id: string; }; }): Users | PromiseLike<Users> {
       throw new Error('Method not implemented.');
     }

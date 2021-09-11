@@ -11,18 +11,17 @@ export class UsersService {
     private usersModel: typeof Users,
   ) {}
 
-  create(createUserDto: CreateUserDto) {
-    return this.usersModel.create(createUserDto);
-  }
-
   findAll() {
-      return this.usersModel.findAll();
-  }
+    return this.usersModel.findAll();
+}
 
-  findById(id: number) {
-    return this.usersModel.findByPk(id, { 
+  async findByEmail(email: string) {
+    return await this.usersModel.findOne({
+      where: {
+        email: email,
+      },
       rejectOnEmpty: true,
-    });
+    })
   }
 
   async findByName(name: string) {
@@ -33,6 +32,16 @@ export class UsersService {
       rejectOnEmpty: true,
     })
   }
+
+  findById(id: number) {
+    return this.usersModel.findByPk(id, { 
+      rejectOnEmpty: true,
+    });
+  }
+
+  create(createUserDto: CreateUserDto) {
+      return this.usersModel.create(createUserDto);
+    }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
     const user = await this.usersModel.findByPk(id, {
