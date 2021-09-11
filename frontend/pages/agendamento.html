@@ -17,6 +17,14 @@
 </head>
 
 <body>
+    <header>
+        <img src="../assets/settings.svg" alt="img-configurações">
+        <div id="div-spans">
+            <span>olá, nome do usuário</span>
+            <span><a href="./login.html" id="link-sair">sair</a></span>
+        </div>
+
+    </header>
     <menu id="menu-container">
         <img src="../assets/menu.svg" alt="menu" id="img-menu">
 
@@ -28,27 +36,95 @@
             </div>
         </div>
     </menu>
-    
+
     <main>
-        <h1 id="title-agendar">agendar</h1>
-        <form id="form-agendar">
-            <div id="unidade">
-                <select name="unidade" id="select-unidade">
-                    <option value="">unidade</option>
-                    <option value="sao-paulo">São Paulo</option>
-                    <option value="santos">Santos</option>
-                </select>
+        <div id="container-principal">
+            <div class="container">
+                <h2 id="title-agendar">agendar</h2>
+                <div id="container1">
+                    <form id="form-agendar">
+                        <div id="unidade">
+                            <select name="unidade" id="select-unidade">
+                                <option value="">unidade</option>
+                                <option value="sao-paulo">São Paulo</option>
+                                <option value="santos">Santos</option>
+                            </select>
+                        </div>
+    
+                        <div id="calendario">
+                            <input type="date" name="data" max="2023-12-31" id="input-data" required>
+                        </div>
+    
+                        <div id="div-inputs-unidade">
+                            <input type="radio" name="unidade" id="sao-paulo" value="sao-paulo" class="input-unidade"
+                                required>
+                            <label for="sao-paulo" class="label-unidade">São Paulo</label>
+    
+                            <input type="radio" name="unidade" id="santos" value="santos" class="input-unidade" required>
+                            <label for="santos" class="label-unidade">Santos</label>
+    
+                        </div>
+    
+                        <input type="submit" id="btn-agendar" value="agendar">
+    
+                    </form>
+                </div>
+    
+    
+            </div>
+    
+            <div class="container">
+                <h2 id="title-consultar-agendamentos">consultar agendamentos</h2>
+    
+                <div id="container2">
+                    <div id="div-informacoes-dia">
+                        <p>pessoas agendadas: n</p>
+                        <p>vagas disponíveis: n</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+
+        <div id="div-agendamentos">
+            <div id="div-futuros-anteriores">
+                <span id="select-futuros">futuros</span>
+                <span id="select-anteriores">anteriores</span>
             </div>
 
-            <div id="calendario">
-                <input type="date" name="data" max="2023-12-31" id="input-data" required>
-            </div>
+            
 
-            <input type="submit" id="btn-agendar" value="agendar">
+    
+        <div id="filtrar-agendamentos">
 
-        </form>
+            <select name="ano" id="select-ano">
+                <option value="2021">2021</option>
+                <option value="2023">2022</option>
+                <option value="2022">2023</option>
+            </select>
+            
+            <select name="mês" id="select-mes">
+                <option value="">mês</option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="12">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
 
-    </main>
+        </div>
+            
+        
+        </div>
+</main>
 
 
 </body>

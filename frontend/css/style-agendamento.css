@@ -3,13 +3,21 @@ body{
     width: 100%;
 }
 
-main{
+header{
+    display: none;
+}
+
+#container-principal, .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     height: 100%;
     width: 100%;
+}
+
+#container2{
+    display: none;
 }
 
 #title-agendar{
@@ -22,6 +30,10 @@ main{
     background-color: #FE4400;
     width: 200px;
     cursor: default;
+}
+
+#title-consultar-agendamentos{
+    display: none;
 }
 
 
@@ -38,8 +50,8 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background-color: #A8A8D0;
 }
@@ -65,6 +77,10 @@ form{
     border: none;
 }
 
+.input-unidade, .label-unidade{
+    display: none;
+}
+
 #btn-agendar{
     margin-top: 1em;
     margin-bottom: 1em;
@@ -81,4 +97,171 @@ form{
 #form-agendar:invalid #btn-agendar{
     opacity: 0.5;
     cursor: default;
+}
+
+#div-agendamentos{
+    display:none;
+}
+
+
+@media only screen and (min-width: 768px){
+
+    body{
+        background-color: #2A2962;
+    }
+
+    header{
+        display: block;
+        background-color: #A8A8D0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 20px;
+        color: #2A2962;
+        padding: .5em;
+    }
+
+    menu{
+        display: none;
+    }
+
+    #div-spans span{
+        margin-right: 2em;
+    }
+
+    #link-sair{
+        font-weight: 900;
+        text-decoration: none;
+        color: #2A2962;
+    }
+
+    #container-principal{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .container{
+        width: 50%;
+        align-items: center;
+        margin-top: 2vh;
+    }
+
+    #title-agendar{
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        padding: .2em .3em .2em .3em;
+        border-radius: 90px 90px 0px 90px;;
+        color: #FFFFFF;  
+        cursor: default;
+        background-color: transparent;
+    }
+
+    form{
+        margin-top: 1vh;
+    }
+
+    #calendario{
+        margin-top: 0;
+    }
+
+    #select-unidade{
+        display: none;
+    }
+
+    #div-inputs-unidade{
+        display: flex;
+        justify-content: center;
+        width: 300px;
+        margin-top: 1em;
+
+    }
+
+    .input-unidade, .label-unidade{
+        display: inline;
+        color: #FFFFFF;
+    }
+
+    .input-unidade{
+        margin-right: .5em;
+    }
+
+    .label-unidade{
+        margin-right: 2em;
+    }
+
+    #container2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+    }
+
+    #title-consultar-agendamentos{
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        padding: .2em .3em .2em .3em;
+        border-radius: 90px 90px 0px 90px;;
+        color: #FFFFFF;  
+        cursor: default;
+    }
+
+    #div-informacoes-dia{
+        background-color: #A8A8D0;
+        color: #2A2962;
+        font-size: 25px;
+        font-weight: 800;
+        border-radius: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 413px;
+        height: 193px;
+        margin-top: 15vh;
+    }
+
+    #btn-agendar{
+        margin-left: 100vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #div-agendamentos{
+        justify-content: space-around;
+        margin-top: 20vh;
+
+    }
+
+    #div-futuros-anteriores{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 20vh;
+    }
+
+    #select-futuros, #select-anteriores{
+        background-color: #A8A8D0;
+        border-radius: 30px;
+        padding: .3em;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    #filtrar-agendamentos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #select-ano, #select-mes{
+        background-color: #A8A8D0;
+        border-radius: 30px;
+        padding: .3em;
+        text-align: center;
+        font-weight: 700;
+    }
+
 }
