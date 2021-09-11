@@ -127,26 +127,6 @@ if (document.body.clientWidth >= 768) {
         selectFuturos.style.removeProperty("background-color")
         selectAnteriores.style.backgroundColor = "#FFFFFF"
     }
-
-
-    const imgConfig = document.getElementById("img-config");
-    const config = document.getElementById("div-config");
-
-
-    function showconfig() {
-        if (config.style.display == "none" || !config.style.display) {
-            config.style.removeProperty("display");
-            config.style.display = "block";
-
-
-        } else {
-            config.style.removeProperty("display");
-            config.style.display = "none"
-        }
-    }
-
-    imgConfig.onclick = showconfig;
-
 }
 
 const divAgendamentos = document.getElementById("div-agendamentos");
