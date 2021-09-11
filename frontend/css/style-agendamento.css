@@ -50,8 +50,8 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     background-color: #A8A8D0;
 }
@@ -168,6 +168,8 @@ form{
 
     #calendario{
         margin-top: 0;
+        width: 400px;
+        height: 400px;
     }
 
     #select-unidade{

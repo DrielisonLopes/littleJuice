@@ -3,7 +3,7 @@ data.min = new Date().toLocaleDateString().split("/").reverse().join("-");
 
 
 //Lógica para desktop
-if (window.screen.width >= 768) {
+if (document.body.clientWidth >= 768) {
 
     //Renderização das informações do dia selecionado
     const inputData = document.getElementById("input-data")
@@ -80,6 +80,7 @@ if (window.screen.width >= 768) {
     window.onload = () => {
         titleAgendar.style.backgroundColor = "#FE4400"
     }
+
     function addContent() {
         titleConsultarAgendamentos.style.removeProperty("background-color");
         titleAgendar.style.removeProperty("background-color");
@@ -146,3 +147,14 @@ if (window.screen.width >= 768) {
     imgConfig.onclick = showconfig;
 
 }
+
+const divAgendamentos = document.getElementById("div-agendamentos");
+document.body.onresize = () => {
+    if (document.body.clientWidth < 768 && divAgendamentos.style.display == "flex") {
+        divAgendamentos.style.display = "none";
+        window.location.href = "../pages/consultar-agendamentos.html";
+    }
+}
+
+
+
