@@ -24,17 +24,21 @@ main{
     height: 100%;
 }
 
+#div-title-editar-dados{
+    display: flex;
+    justify-content: center; 
+}
+
 h1{
     background-color: #FE4400;
     border-radius: 40px 40px 0 40px;
-    width: 70%;
-    padding: .5em 0.1rem;
+    width: 60%;
+    padding: .3em .3em;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
     margin-top: 2vh;
     margin-bottom: 6vh;
-    margin-left: 14%;
 }
 
 #div-editar-dados{
