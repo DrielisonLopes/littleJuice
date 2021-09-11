@@ -24,11 +24,11 @@ export class ScheduleService {
     })
   }
 
-  async countAllForDateAndLocation(date: typeof Date, location_schedule: string) {
+  async countAllForDateAndLocation(date: Date, location_schedule: string) {
     await Schedule.findAll({
       where: {
-        date: typeof Date,
-        location_schedule: location_schedule,
+        date,
+        location_schedule,
       }
     })
   }
@@ -39,10 +39,17 @@ export class ScheduleService {
     });
   }
 
-  create(createScheduleDto: CreateScheduleDto) {
+  async create(createScheduleDto: CreateScheduleDto) {
     return this.scheduleModel.create(createScheduleDto);
-  }
+    }
 
+  // Cria agenda e valida se ainda tem vagas no dia
+  // async create(createScheduleDto: CreateScheduleDto) {
+  //   if (await countAllForDateAndLocation(Schedule.date, Schedule.location_schedule) < 239){
+  //     return this.scheduleModel.create(createScheduleDto);
+  //   }
+  // }
+  
   async update(id: number, updateScheduleDto: UpdateScheduleDto) {
     const schedule = await this.scheduleModel.findByPk(id, {
       rejectOnEmpty: true,

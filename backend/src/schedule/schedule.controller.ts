@@ -3,7 +3,6 @@ import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { Schedule } from './entities/schedule.entity';
-import { DATEONLY } from 'sequelize';
 
 @Controller('schedule')
 export class ScheduleController {
@@ -23,7 +22,7 @@ export class ScheduleController {
   }
 
   @Get('count')
-  async countAllForDateAndLocation(@Query('date') date: typeof Date, @Query('location_schedule') location_schedule: string) {
+  async countAllForDateAndLocation(@Query('date') date: Date, @Query('location_schedule') location_schedule: string) {
     return this.scheduleService.countAllForDateAndLocation(date, location_schedule);
   }
 
