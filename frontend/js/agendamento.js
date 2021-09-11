@@ -1,4 +1,5 @@
 const data = document.getElementById("input-data");
+const checkAgendamento = document.getElementById("btn-agendar")
 data.min = new Date().toLocaleDateString().split("/").reverse().join("-");
 
 
@@ -146,3 +147,12 @@ if (window.screen.width >= 768) {
     imgConfig.onclick = showconfig;
 
 }
+
+// Enviar agendamento
+checkAgendamento.addEventListener("click", function(e) {
+    e.preventDefault()
+
+    if(data.value != 0){
+        swal("🍊", "agendamento realizado")
+    }
+})
