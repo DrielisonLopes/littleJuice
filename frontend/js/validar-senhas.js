@@ -1,13 +1,15 @@
 const inputSenha = document.getElementById("senha");
 const inputConfirmarSenha = document.getElementById("confirmar-senha");
+const checkSenha = document.getElementById("btn-ok")
 
+checkSenha.addEventListener("click", function(e) {
+    e.preventDefault()
 
-function checkSenha(){
     if(inputConfirmarSenha.value != inputSenha.value){
-        inputConfirmarSenha.setCustomValidity("As senhas não correspondem!")
+        alert("As senhas não correspondem!")
     } else{
-        inputConfirmarSenha.setCustomValidity('');
+        swal("Good job!", "você vai receber um e-mail com um link de confirmação", "success");
     }
-}
+})
 
 inputConfirmarSenha.oninput = checkSenha;
