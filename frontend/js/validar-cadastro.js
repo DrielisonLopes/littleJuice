@@ -1,8 +1,9 @@
 const inputSenha = document.getElementById("senha");
 const inputConfirmarSenha = document.getElementById("confirmar-senha");
-const checkSenha = document.getElementById("btn-ok")
+const checkCadastrar = document.getElementById("btn-cadastrar")
 
-checkSenha.addEventListener("click", function(e) {
+
+checkCadastrar.addEventListener("click", function(e) {
     e.preventDefault()
 
     if(inputConfirmarSenha.value != inputSenha.value){
@@ -13,4 +14,5 @@ checkSenha.addEventListener("click", function(e) {
         swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     }
 })
-inputConfirmarSenha.oninput = checkSenha;
+
+// inputConfirmarCadastrar.oninput = checkSenha;
