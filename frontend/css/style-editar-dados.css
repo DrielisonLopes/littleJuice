@@ -1,0 +1,117 @@
+body{
+    background-color: #A8A8D0;
+    color: #FFFFFF;
+    background-image: url("../assets/balao-orange.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 448px 427px;
+    height: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+#div-title-editar-dados{
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 2vh;
+}
+
+h1{
+    background-color: #FE4400;
+    border-radius: 40px 40px 0 40px;
+    width: 290px;
+    padding: .3em .3em;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1vh;
+}
+
+h1, h2{
+    cursor: default;
+}
+
+#div-editar-dados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+}
+
+h2{
+    background-color: #5251A2;
+    border-radius: 40px 40px 40px 40px;
+    font-size: 24px;
+    padding: .5em;
+}
+
+img {
+    opacity: 0.5;
+}
+
+input, label, select, button{
+    display: block;
+    color: #262561;
+}
+
+input, select{
+    margin-top: 2em;
+    margin-bottom: .5em;
+    border: none;
+    font-size: 20px;
+    padding: 0 .3em 0 .3em;
+    border-radius: 20px;
+}
+
+input{
+    width: 286px;
+    height: 34px;
+}
+
+select{
+    height: 27px;
+    text-align: center;
+}
+
+label{
+    font-size: 19px;
+    margin-bottom: 1em;
+}
+
+label a{
+    text-decoration: none;
+    color: #262561;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+button{
+    border: none;
+    margin-top: 6vh;
+    background-color: #5251A2;
+    border-radius: 40px 40px 0 40px;
+    width: 230px;
+    height: 60px;
+    font-size: 20px;
+    color: #FFFFFF;
+    box-shadow: -4px -11px 0px 1px #FE4400, 0px 4px 4px 4px rgba(0,0,0,0.31);;
+}
+

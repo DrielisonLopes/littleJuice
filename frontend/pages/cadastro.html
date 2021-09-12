@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style-geral.css">
     <link rel="stylesheet" href="../css/style-cadastro.css">
+    
     <link rel="icon" type="imagem/png"
         href="https://spng.pngfind.com/pngs/s/275-2754652_download-svg-download-png-icone-de-laranja-transparent.png" />
 
-    <!--Fonte Montserrat-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -26,28 +26,51 @@
             <main>
                 <form action="" id="form-cadastro">
                     <label for="nome">nome</label>
-                    <input type="text" id="nome" name="nome">
+                    <input type="text" id="nome" name="nome" required>
 
-                    <label for="email">email</label>
-                    <input type="text" id="email" name="email">
+                    <label for="email">e-mail</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <fieldset aria-required="true">
+                        <legend>unidade:</legend>
+                        <div class="select-unidade">
+                            <input type="radio" name="unidade" value="1" id="unidade-sao-paulo" required>
+                            <label for="unidade-sao-paulo">São Paulo</label>
+
+                        </div>
+
+                        <div class="select-unidade">
+                            <input type="radio" name="unidade" value="2" id="unidade-santos" required>
+                            <label for="unidade-santos">Santos</label>
+                        </div>
+
+                        <div class="select-unidade">
+                            <input type="radio" name="unidade" value="3" id="home-office" required>
+                            <label for="home-office">home office</label>
+                        </div>
+
+                    </fieldset>
 
 
                     <label for="senha">senha</label>
-                    <input type="text" id="senha" name="senha">
+                    <input type="password" id="senha" name="senha" required minlength="8">
 
                     <label for="confirmar-senha">confirmar senha</label>
-                    <input type="text" id="confirmar-senha" name="confirmar-senha">
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
 
                     <input type="submit" value="Cadastrar" id="btn-cadastrar">
 
-                    <a id="voltar" href="./index.html">voltar</a>
                 </form>
-
+                
             </main>
+            
         </div>
     </div>
-
-
+    <footer>
+        <a id="voltar" href="./login.html">voltar</a>
+    </footer>
 </body>
+
+<script src="../js/validar-cadastro.js"></script>
 
 </html>

@@ -1,0 +1,29 @@
+body{
+    background-color: #FE4400;
+    text-align: center;
+}
+
+main{
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#img-landing-page{
+    height: 350px;
+    /* margin-left: 35%; */
+}
+
+#logo{
+    margin-bottom: 6vh;
+    width: 12rem;
+}
+
+@media (max-width: 768px) {
+    #img-landing-page {
+        margin-left: 6rem;
+    }
+}
