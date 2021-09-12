@@ -21,11 +21,11 @@ export class UsersController {
     return this.usersService.findByEmail(email);
   }
 
-  @Get('name')
+  @Get()
   findByName(@Query('name') name: string) {
-    Users.findOne().then((users) => {
-      users.name = name
-    })
+    // Users.findOne().then((users) => {
+    //   users.name = name
+    // })
     return this.usersService.findByName(name);
   }
 
