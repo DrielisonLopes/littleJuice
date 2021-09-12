@@ -23,10 +23,10 @@ formCadastro.addEventListener("submit", function(e) {
     console.log(nome.value, email.value, unidade.value, senha.value);
 
     const user = JSON.stringify({
-        name: nome.value, 
-        email: email.value, 
-        location: unidade.value, 
-        password: senha.value
+        "name": nome.value, 
+        "email": email.value, 
+        "location": unidade.value, 
+        "password": senha.value
     })
     console.log(user)
     console.log(typeof(user))
