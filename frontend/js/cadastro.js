@@ -23,13 +23,21 @@ formCadastro.addEventListener("submit", function(e) {
     console.log(nome.value, email.value, unidade.value, senha.value);
 
     const user = JSON.stringify({
-        nome: nome.value, 
+        name: nome.value, 
         email: email.value, 
-        unidade: unidade.value, 
-        senha: senha.value
+        location: unidade.value, 
+        password: senha.value
     })
     console.log(user)
     console.log(typeof(user))
+    fetch("http://127.0.0.1:3000/users", {
+        method: 'POST',
+        mode : 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: user
+    })
 })
 
 // inputConfirmarCadastrar.oninput = checkSenha;
