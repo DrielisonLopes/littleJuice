@@ -23,7 +23,7 @@ export class UsersController {
 
   @Get()
   findByName(@Query('name') name: string) {
-    // Users.findOne().then((users) => {
+    // Users.findOne().then((users) => {            utilizando a função findOne()
     //   users.name = name
     // })
     return this.usersService.findByName(name);
