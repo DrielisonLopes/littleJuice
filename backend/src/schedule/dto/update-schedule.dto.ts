@@ -8,6 +8,6 @@ export class UpdateScheduleDto {
 
     @IsString()
     @IsNotEmpty()
-    @IsDate()
+    //@IsDate()
     date: Date;
 }

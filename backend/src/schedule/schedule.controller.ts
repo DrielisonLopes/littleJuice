@@ -15,10 +15,12 @@ export class ScheduleController {
 
   @Get('user')
   findByUsers(@Query('id_users') id_users: number) {
-    Schedule.findOne().then((schedule) => {
-      schedule.id_users = id_users
+    const result = Schedule.findAll({
+      where: {
+        id_users,
+      },
     })
-    return this.scheduleService.findById_Users(id_users);
+    return result;
   }
 
   @Get('count')

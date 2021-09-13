@@ -16,11 +16,10 @@ export class ScheduleService {
   }
 
   async findById_Users(id_users: number) {
-    return await this.scheduleModel.findOne({
+    return await this.scheduleModel.findAll({
       where: {
         id_users,
       },
-      rejectOnEmpty: true,
     })
   }
 
