@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { HttpCode, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+import { stringify } from 'querystring';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { Schedule } from './entities/schedule.entity';
@@ -80,21 +81,14 @@ export class ScheduleService {
   }
 
   async create(createScheduleDto: CreateScheduleDto) {
-    return this.scheduleModel.create(createScheduleDto);
+    const result = await this.vacancyByDateAndLocation(createScheduleDto.date, createScheduleDto.location_schedule);
+    if (result > 0) {
+      return this.scheduleModel.create(createScheduleDto);      
     }
-
-  // Cria agenda e valida se ainda tem vagas no dia
-  // async create(createScheduleDto: CreateScheduleDto) {
-  //   const result = await Schedule.findAndCountAll({
-  //     where: {
-  //       date,
-  //       location_schedule,
-  //     }
-  //   })
-  //   if (result.count < 240) {
-  //     return this.scheduleModel.create(createScheduleDto)
-  //   }
-  // }
+    // else {
+    //   return @HttpCode(500) `Não há vagas nesta unidade nesta data.`
+    // }
+  }
   
   async update(id: number, updateScheduleDto: UpdateScheduleDto) {
     const schedule = await this.scheduleModel.findByPk(id, {
