@@ -140,8 +140,6 @@ document.body.onresize = () => {
         inputSaoPaulo.removeAttribute("required")
         inputSantos.removeAttribute("required")
         selectUnidade.setAttribute("required", "required")
-        window.location.href = "../pages/principal.html";
-
     }
 }
 
