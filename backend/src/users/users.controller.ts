@@ -15,9 +15,6 @@ export class UsersController {
   
   @Get('email')
   findByEmail(@Query('email') email: string) {
-    // Users.findOne().then((users) => {
-    //   users.email = email;
-    // })
     return this.usersService.findByEmail(email);
   }
 
