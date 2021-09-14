@@ -53,10 +53,10 @@
                 <div id="container1">
                     <form id="form-agendar">
                         <div id="unidade">
-                            <select name="unidade" id="select-unidade">
-                                <option value="">unidade</option>
-                                <option value="sao-paulo">São Paulo</option>
-                                <option value="santos">Santos</option>
+                            <select name="unidade" id="select-unidade" required>
+                                <option value="" name=location>unidade</option>
+                                <option value="sao-paulo" name=location>São Paulo</option>
+                                <option value="santos" name="location">Santos</option>
                             </select>
                         </div>
 
@@ -66,11 +66,11 @@
 
                         <div id="div-inputs-unidade">
                             <input type="radio" name="unidade" id="sao-paulo" value="sao-paulo" class="input-unidade"
-                                required>
+                            >
                             <label for="sao-paulo" class="label-unidade">São Paulo</label>
 
                             <input type="radio" name="unidade" id="santos" value="santos" class="input-unidade"
-                                required>
+                                >
                             <label for="santos" class="label-unidade">Santos</label>
 
                         </div>

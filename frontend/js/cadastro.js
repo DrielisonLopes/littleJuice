@@ -12,13 +12,6 @@ const senha = document.getElementById("senha");
 
 formCadastro.addEventListener("submit", function(e) {    
     e.preventDefault()
-    if(inputConfirmarSenha.value != inputSenha.value){
-        swal("🍊", "as senhas não correspondem")
-    } else if(inputSenha.value == 0 || inputConfirmarSenha == 0) {
-        swal("🍊", "não pode deixar os campos vazios")
-    } else {
-        swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
-    }
 
     console.log(nome.value, email.value, unidade.value, senha.value);
 
@@ -38,6 +31,14 @@ formCadastro.addEventListener("submit", function(e) {
         },
         body: JSON.stringify(user)
     })
+
+    if(inputConfirmarSenha.value != inputSenha.value){
+        swal("🍊", "as senhas não correspondem")
+    } else if(inputSenha.value == 0 || inputConfirmarSenha == 0) {
+        swal("🍊", "não pode deixar os campos vazios")
+    } else {
+        swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
+    }
 })
 
 // inputConfirmarCadastrar.oninput = checkSenha;

@@ -1,5 +1,4 @@
 const data = document.getElementById("input-data");
-const checkAgendamento = document.getElementById("btn-agendar")
 data.min = new Date().toLocaleDateString().split("/").reverse().join("-");
 
 
@@ -140,7 +139,9 @@ document.body.onresize = () => {
 
 
 // Enviar agendamento
-checkAgendamento.addEventListener("click", function(e) {
+const formAgendar = document.getElementById("form-agendar")
+
+checkAgendamento.addEventListener("submit", function(e) {
     e.preventDefault()
 
     if(data.value != 0){
