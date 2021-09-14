@@ -6,18 +6,18 @@ let infoUser;
 function loginUser(e) {
     e.preventDefault();
     fetch(`http://127.0.0.1:3000/users/email?email=${email.value}`, {
-        method: 'GET'
+        method: 'GET',
     }).then((response) => {
         response.json().then(data => {
             infoUser = data;
-        }).then( () => {
-            if(infoUser.password != senha.value){
+        }).then(() => {
+            if (infoUser.password != senha.value) {
                 window.alert('Senha incorreta!');
-                senha.value = '';
-            } else{
-                window.location = '../pages/principal.html'
+            } else {
+                localStorage.setItem("id_user", infoUser.id);
+                window.location = '../pages/principal.html';
             }
-        } );   
+        });
     })
 }
 

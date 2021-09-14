@@ -10,17 +10,16 @@ const unidade = document.querySelector('input[name="location"]')
 const senha = document.getElementById("senha");
 
 
-formCadastro.addEventListener("submit", function (e) {
-    e.preventDefault();
+formCadastro.addEventListener("submit", function(e) {    
+    e.preventDefault()
 
-    //Requisição pro backend
     console.log(nome.value, email.value, unidade.value, senha.value);
 
     const user = {
-        "name": nome.value,
-        "email": email.value,
-        "location": unidade.value,
-        "password": senha.value
+        name: nome.value, 
+        email: email.value, 
+        location: unidade.value, 
+        password: senha.value
     }
     console.log(user)
     console.log(typeof (user))
@@ -31,14 +30,15 @@ formCadastro.addEventListener("submit", function (e) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
+    }).then(() =>{
+        window.location = '../pages/login.html'
+        swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     })
 
     if (inputConfirmarSenha.value != inputSenha.value) {
         swal("🍊", "as senhas não correspondem")
     } else if (inputSenha.value == 0 || inputConfirmarSenha == 0) {
         swal("🍊", "não pode deixar os campos vazios")
-    } else {
-        swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     }
 })
 
