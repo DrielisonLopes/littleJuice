@@ -6,6 +6,8 @@ const inputData = document.getElementById("input-data");
 const inputSaoPaulo = document.getElementById("sao-paulo");
 const inputSantos = document.getElementById("santos");
 const informacoesDia = document.getElementById("div-informacoes-dia");
+const divAgendamentos = document.getElementById("div-agendamentos");
+
 
 function renderingElementsDesktop() {
 
@@ -132,7 +134,6 @@ function renderingElementsDesktop() {
 }
 
 
-const divAgendamentos = document.getElementById("div-agendamentos");
 document.body.onresize = () => {
     renderingElementsDesktop()
     if (document.body.clientWidth < 768 && divAgendamentos.style.display == "flex") {
