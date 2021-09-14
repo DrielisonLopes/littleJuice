@@ -24,7 +24,7 @@ export class ScheduleService {
     })
   }
 
-  async countAllForDateAndLocation(date: string, location_schedule: string) {
+  async findAllSchedulesByDateAndLocation(date: string, location_schedule: string) {
     return await Schedule.findAll({
       where: {
         date,

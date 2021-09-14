@@ -25,9 +25,9 @@ export class ScheduleController {
   }
 
   @Get('count')
-  async countAllForDateAndLocation(@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
+  async findAllSchedulesByDateAndLocation(@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
     console.log(date);
-    return this.scheduleService.countAllForDateAndLocation(date, location_schedule);
+    return this.scheduleService.findAllSchedulesByDateAndLocation(date, location_schedule);
   }
 
   @Get(':id')
