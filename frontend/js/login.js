@@ -1,22 +1,23 @@
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const formLogin = document.getElementById('form-login');
+let infoUser;
 
-function loginUser(e){
+function loginUser(e) {
     e.preventDefault();
-    const infoUser = fetch(`http://127.0.0.1:3000/users/email`, {
+    fetch(`http://127.0.0.1:3000/users/email?email=${email.value}`, {
         method: 'GET'
-    }).then((response) =>{
-        return response.json();
+    }).then((response) => {
+        response.json().then(data => {
+            infoUser = data;
+        }).then( () => {
+            if(infoUser.password != senha.value){
+                window.alert('Senha incorreta!');
+            } else{
+                window.location = '../pages/principal.html'
+            }
+        } );   
     })
-    
-    console.log(infoUser);
 }
 
-fetch(`http://127.0.0.1:3000/users/a@ab`, {
-        method: 'GET'
-    }).then((response) =>{
-        console.log(response.json());
-    })
-
-formLogin.addEventListener('submit', loginUser)
+formLogin.addEventListener('submit', loginUser);
