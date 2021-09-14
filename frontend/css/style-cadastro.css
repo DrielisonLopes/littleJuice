@@ -1,8 +1,6 @@
 body{
     background-color: #A8A8D0;
-
 }
-
 
 .container{
     margin-top: 6vh;
@@ -45,9 +43,19 @@ main{
     width: 100%;
 }
 
-label, input{
-    display: block;
+input:last-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #FFFFFF;
+}
+
+p, label {
+    color: #2A2962;
+    font-weight: bold;
+    font-size: 21px;
+    display: inline-block;
 }
 
 input{
@@ -110,4 +118,13 @@ fieldset div label{
 #form-cadastro:invalid #btn-cadastrar{
     opacity: 0.5;
     cursor: default;
+}
+
+@media only screen and (min-width: 768px){
+    fieldset {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
