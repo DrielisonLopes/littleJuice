@@ -1,5 +1,5 @@
 body{
-    background-color: #A8A8D0;
+    background-color: rgba(168, 168, 208, 0.5);
     color: #FFFFFF;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,7 +54,6 @@ h1, h2{
     width: 18rem;           
     background: #A8A8D0;
     border-radius: 50% 0% 50% 50%;
-    box-shadow: 5px -3px 10px -3px #000;
     padding: 16px;
     text-align: center;
 }

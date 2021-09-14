@@ -1,4 +1,5 @@
 body{
+    margin-top: 1rem;
     background-color: #FEBBA2;
 }
 
@@ -78,4 +79,10 @@ label{
 #form-redefinir-email:invalid #btn-ok{
     opacity: 0.5;
     cursor: default;
+}
+
+
+#voltar {
+    margin: 0;
+    padding-left: 1rem;
 }
