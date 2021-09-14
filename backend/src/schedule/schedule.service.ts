@@ -68,7 +68,7 @@ export class ScheduleService {
     }
 
     // retorna a quantidade de vagas disponíveis em Santos
-    else if (location_schedule === "Santos") {
+     if (location_schedule === "Santos") {
       return capacitySantos*percentSantos - result;
     }
   }
