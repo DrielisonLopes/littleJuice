@@ -6,7 +6,7 @@ const checkCadastrar = document.getElementById("btn-cadastrar")
 const formCadastro = document.getElementById("form-cadastro");
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
-const unidade = document.querySelector('input[name="unidade"]')
+const unidade = document.querySelector('input[name="location"]')
 const senha = document.getElementById("senha");
 
 
@@ -22,14 +22,22 @@ formCadastro.addEventListener("submit", function(e) {
 
     console.log(nome.value, email.value, unidade.value, senha.value);
 
-    const user = JSON.stringify({
-        nome: nome.value, 
+    const user = {
+        name: nome.value, 
         email: email.value, 
-        unidade: unidade.value, 
-        senha: senha.value
-    })
+        location: unidade.value, 
+        password: senha.value
+    }
     console.log(user)
     console.log(typeof(user))
+    fetch("http://127.0.0.1:3000/users", {
+        method: 'POST',
+
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
 })
 
 // inputConfirmarCadastrar.oninput = checkSenha;
