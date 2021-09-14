@@ -163,10 +163,31 @@ window.onload= ()=> {
 // Enviar agendamento
 const formAgendar = document.getElementById("form-agendar")
 
-checkAgendamento.addEventListener("submit", function(e) {
+formAgendar.addEventListener("submit", function(e) {
     e.preventDefault()
 
     if (data.value != 0) {
         swal("🍊", "agendamento realizado")
     }
+
+    //Requisição para o backend
+
+    const unidade = document.querySelector('input[name="unidade"]')
+    const userId = '9';
+    const schedule = {
+        location_schedule: unidade.value,
+        date: inputData.value,
+        id_users: userId
+    }
+
+    fetch("http://127.0.0.1:3000/schedule", {
+        method: 'POST',
+
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(schedule)
+    })
+
+    console.log(inputData.value, unidade.value)
 })
