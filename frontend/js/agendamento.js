@@ -136,15 +136,13 @@ function renderingElementsDesktop() {
 
 document.body.onresize = () => {
     renderingElementsDesktop()
-    if (document.body.clientWidth < 768 && divAgendamentos.style.display == "flex") {
-        divAgendamentos.style.display = "none";
-        window.location.href = "../pages/consultar-agendamentos.html";
-    }
 
     if(document.body.clientWidth < 768){
         inputSaoPaulo.removeAttribute("required")
         inputSantos.removeAttribute("required")
         selectUnidade.setAttribute("required", "required")
+                window.location.href = "../pages/principal.html";
+
     }
 }
 
