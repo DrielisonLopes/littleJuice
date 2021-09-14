@@ -15,17 +15,14 @@ export class UsersController {
   
   @Get('email')
   findByEmail(@Query('email') email: string) {
-    Users.findOne().then((users) => {
-      users.email = email;
-    })
+    // Users.findOne().then((users) => {
+    //   users.email = email;
+    // })
     return this.usersService.findByEmail(email);
   }
 
   @Get('name')
   findByName(@Query('name') name: string) {
-    // Users.findOne().then((users) => {            utilizando a função findOne()
-    //   users.name = name
-    // })
     return this.usersService.findByName(name);
   }
 
