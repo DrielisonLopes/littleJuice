@@ -40,25 +40,6 @@ formCadastro.addEventListener("submit", function(e) {
         swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     }
 
-    //Requisição pro backend
-    console.log(nome.value, email.value, unidade.value, senha.value);
-
-    const user = {
-        "name": nome.value, 
-        "email": email.value, 
-        "location": unidade.value, 
-        "password": senha.value
-    }
-    console.log(user)
-    console.log(typeof(user))
-    fetch("http://127.0.0.1:3000/users", {
-        method: 'POST',
-
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
 })
 
 // inputConfirmarCadastrar.oninput = checkSenha;
