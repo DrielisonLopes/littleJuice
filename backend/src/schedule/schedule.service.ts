@@ -30,7 +30,16 @@ export class ScheduleService {
         date,
         location_schedule,
       }
-    })
+    });
+  }
+
+  async countAllScheduleForDateAndLocation (date: string, location_schedule: string) {
+    return await Schedule.count({
+      where: {
+        date,
+        location_schedule,
+      },
+    });
   }
 
   findById(id: number) {

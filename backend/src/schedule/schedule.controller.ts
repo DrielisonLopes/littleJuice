@@ -24,10 +24,15 @@ export class ScheduleController {
     return result;
   }
 
-  @Get('count')
+  @Get('all')
   async findAllSchedulesByDateAndLocation(@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
     console.log(date);
     return this.scheduleService.findAllSchedulesByDateAndLocation(date, location_schedule);
+  }
+
+  @Get('count')
+  async countAllScheduleForDateAndLocation (@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
+    return this.scheduleService.countAllScheduleForDateAndLocation(date, location_schedule);
   }
 
   @Get(':id')
