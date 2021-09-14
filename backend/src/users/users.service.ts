@@ -27,7 +27,7 @@ export class UsersService {
   async findByName(name: string) {
     return await this.usersModel.findOne({
       where: {
-        name: name,
+        name,
       },
       rejectOnEmpty: true,
     })

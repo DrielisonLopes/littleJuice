@@ -16,11 +16,10 @@ export class ScheduleService {
   }
 
   async findById_Users(id_users: number) {
-    return await this.scheduleModel.findOne({
+    return await this.scheduleModel.findAll({
       where: {
         id_users,
       },
-      rejectOnEmpty: true,
     })
   }
 
@@ -45,8 +44,14 @@ export class ScheduleService {
 
   // Cria agenda e valida se ainda tem vagas no dia
   // async create(createScheduleDto: CreateScheduleDto) {
-  //   if (await countAllForDateAndLocation(Schedule.date, Schedule.location_schedule) < 239){
-  //     return this.scheduleModel.create(createScheduleDto);
+  //   const result = await Schedule.findAndCountAll({
+  //     where: {
+  //       date,
+  //       location_schedule,
+  //     }
+  //   })
+  //   if (result.count < 240) {
+  //     return this.scheduleModel.create(createScheduleDto)
   //   }
   // }
   
