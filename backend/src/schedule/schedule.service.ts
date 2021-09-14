@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+import moment from 'moment';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { Schedule } from './entities/schedule.entity';
@@ -23,8 +24,8 @@ export class ScheduleService {
     })
   }
 
-  async countAllForDateAndLocation(date: Date, location_schedule: string) {
-    await Schedule.findAll({
+  async countAllForDateAndLocation(date: string, location_schedule: string) {
+    return await Schedule.findAll({
       where: {
         date,
         location_schedule,

@@ -16,7 +16,7 @@ export class Schedule extends Model {
 
     @AllowNull(false)
     @Column
-    date: Date;
+    date: string;
 
     @ForeignKey(() => Users)
     @AllowNull(false)

@@ -3,6 +3,7 @@ import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { Schedule } from './entities/schedule.entity';
+import moment from 'moment';
 
 @Controller('schedule')
 export class ScheduleController {
@@ -14,7 +15,7 @@ export class ScheduleController {
   }
 
   @Get('user')
-  findByUsers(@Query('id_users') id_users: number) {
+  findByIdUsers(@Query('id_users') id_users: number) {
     const result = Schedule.findAll({
       where: {
         id_users,
@@ -24,7 +25,8 @@ export class ScheduleController {
   }
 
   @Get('count')
-  async countAllForDateAndLocation(@Query('date') date: Date, @Query('location_schedule') location_schedule: string) {
+  async countAllForDateAndLocation(@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
+    console.log(date);
     return this.scheduleService.countAllForDateAndLocation(date, location_schedule);
   }
 
