@@ -1,7 +1,6 @@
 body{
-    background-color: #A8A8D0;
+    background-color: rgba(168, 168, 208, 0.5);
     color: #FFFFFF;
-    background-image: url("../assets/balao-orange.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 448px 427px;
@@ -29,14 +28,15 @@ main{
 }
 
 h1{
-    background-color: #FE4400;
+    background-color: #5251A2;
     border-radius: 40px 40px 0 40px;
     width: 290px;
-    padding: .3em .3em;
+    padding: .8em .3em;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 1vh;
+    margin-top: .5rem;
 }
 
 h1, h2{
@@ -48,14 +48,22 @@ h1, h2{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4vh;
+    margin: 4vh;
+
+    height: 18rem;          
+    width: 18rem;           
+    background: #A8A8D0;
+    border-radius: 50% 0% 50% 50%;
+    padding: 16px;
+    text-align: center;
 }
 
-h2{
-    background-color: #5251A2;
+h2 {
     border-radius: 40px 40px 40px 40px;
     font-size: 24px;
-    padding: .5em;
+    padding: .1em;
+    margin-top: 1.6em;
+    color: #2A2962;
 }
 
 img {
@@ -110,12 +118,13 @@ button{
     height: 60px;
     font-size: 20px;
     color: #FFFFFF;
-    box-shadow: -4px -11px 0px 1px #FE4400, 0px 4px 4px 4px rgba(0,0,0,0.31);;
+    box-shadow: 0px 4px 4px 4px rgba(0,0,0,0.31);;
 }
 
 @media only screen and (min-width: 768px){
     #header-desktop{
         background-color: #2A2962;
+        margin-bottom: 10px;
     }
 
     #saudacao{
@@ -130,7 +139,7 @@ button{
     }
 
     #div-title-editar-dados{ 
-        margin-bottom: 12vh;
+        margin-bottom: 2vh;
     }
 
     #div-editar-dados{
