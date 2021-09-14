@@ -22,7 +22,7 @@ formCadastro.addEventListener("submit", function(e) {
         password: senha.value
     }
     console.log(user)
-    console.log(typeof(user))
+    console.log(typeof (user))
     fetch("http://127.0.0.1:3000/users", {
         method: 'POST',
 
@@ -32,14 +32,13 @@ formCadastro.addEventListener("submit", function(e) {
         body: JSON.stringify(user)
     })
 
-    if(inputConfirmarSenha.value != inputSenha.value){
+    if (inputConfirmarSenha.value != inputSenha.value) {
         swal("🍊", "as senhas não correspondem")
-    } else if(inputSenha.value == 0 || inputConfirmarSenha == 0) {
+    } else if (inputSenha.value == 0 || inputConfirmarSenha == 0) {
         swal("🍊", "não pode deixar os campos vazios")
     } else {
         swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     }
-
 })
 
 // inputConfirmarCadastrar.oninput = checkSenha;

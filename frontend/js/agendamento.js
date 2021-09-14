@@ -5,6 +5,8 @@ const inputData = document.getElementById("input-data");
 const inputSaoPaulo = document.getElementById("sao-paulo");
 const inputSantos = document.getElementById("santos");
 const informacoesDia = document.getElementById("div-informacoes-dia");
+const divAgendamentos = document.getElementById("div-agendamentos");
+
 
 function renderingElementsDesktop() {
 
@@ -131,18 +133,15 @@ function renderingElementsDesktop() {
 }
 
 
-const divAgendamentos = document.getElementById("div-agendamentos");
 document.body.onresize = () => {
     renderingElementsDesktop()
-    if (document.body.clientWidth < 768 && divAgendamentos.style.display == "flex") {
-        divAgendamentos.style.display = "none";
-        window.location.href = "../pages/consultar-agendamentos.html";
-    }
 
     if(document.body.clientWidth < 768){
         inputSaoPaulo.removeAttribute("required")
         inputSantos.removeAttribute("required")
         selectUnidade.setAttribute("required", "required")
+                window.location.href = "../pages/principal.html";
+
     }
 }
 

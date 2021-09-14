@@ -13,6 +13,10 @@ function loginUser(e) {
         }).then( () => {
             if(infoUser.password != senha.value){
                 window.alert('Senha incorreta!');
+<<<<<<< HEAD
+=======
+                senha.value = '';
+>>>>>>> main
             } else{
                 window.location = '../pages/principal.html'
             }
