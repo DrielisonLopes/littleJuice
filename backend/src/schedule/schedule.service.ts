@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import moment from 'moment';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { Schedule } from './entities/schedule.entity';
@@ -33,13 +32,45 @@ export class ScheduleService {
     });
   }
 
-  async countAllScheduleForDateAndLocation (date: string, location_schedule: string) {
+  async countAllScheduleByDateAndLocation (date: string, location_schedule: string) {
     return await Schedule.count({
       where: {
         date,
         location_schedule,
       },
     });
+  }
+
+  async vacancyByDateAndLocation (date: string, location_schedule: string) {
+    
+    //capacidade total de São Paulo
+    const capacitySP = 600;
+
+    //capacidade total de Santos
+    const capacitySantos = 100;
+
+    // percentual liberado em SP
+    const percentSP = 0.4;
+
+    //percentual liberado em Santos
+    const percentSantos = 0.4;
+
+    const result = await Schedule.count({
+      where: {
+        date,
+        location_schedule,
+      },
+    });
+
+    // retorna a quantidade de vagas disponíveis em SP
+    if(location_schedule === "São Paulo") {
+      return capacitySP*percentSP - result;
+    }
+
+    // retorna a quantidade de vagas disponíveis em Santos
+    else if (location_schedule === "Santos") {
+      return capacitySantos*percentSantos - result;
+    }
   }
 
   findById(id: number) {

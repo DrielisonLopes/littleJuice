@@ -24,8 +24,13 @@ export class ScheduleController {
   }
 
   @Get('count')
-  async countAllScheduleForDateAndLocation (@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
-    return this.scheduleService.countAllScheduleForDateAndLocation(date, location_schedule);
+  async countAllScheduleByDateAndLocation (@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
+    return this.scheduleService.countAllScheduleByDateAndLocation(date, location_schedule);
+  }
+
+  @Get('vacancy')
+  async vacancyByDateAndLocation (@Query ('date') date: string, @Query('location_schedule') location_schedule: string) {
+    return this.scheduleService.vacancyByDateAndLocation(date, location_schedule);
   }
 
   @Get(':id')
