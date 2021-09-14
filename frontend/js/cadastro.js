@@ -30,14 +30,15 @@ formCadastro.addEventListener("submit", function(e) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
+    }).then(() =>{
+        window.location = '../pages/login.html'
+        swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     })
 
     if (inputConfirmarSenha.value != inputSenha.value) {
         swal("🍊", "as senhas não correspondem")
     } else if (inputSenha.value == 0 || inputConfirmarSenha == 0) {
         swal("🍊", "não pode deixar os campos vazios")
-    } else {
-        swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
     }
 })
 

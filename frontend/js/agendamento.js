@@ -12,11 +12,11 @@ function renderingElementsDesktop() {
 
     //Lógica para desktop
     if (document.body.clientWidth >= 768) {
- 
+
         selectUnidade.removeAttribute("required");
         inputSaoPaulo.setAttribute("required", "required");
         inputSaoPaulo.setAttribute("required", "required");
-        
+
         //Renderização das informações do dia selecionado
 
         informacoesDia.style.removeProperty("display");
@@ -136,23 +136,23 @@ function renderingElementsDesktop() {
 document.body.onresize = () => {
     renderingElementsDesktop()
 
-    if(document.body.clientWidth < 768){
+    if (document.body.clientWidth < 768) {
         inputSaoPaulo.removeAttribute("required")
         inputSantos.removeAttribute("required")
         selectUnidade.setAttribute("required", "required")
-                window.location.href = "../pages/principal.html";
+        window.location.href = "../pages/principal.html";
 
     }
 }
 
-window.onload= ()=> {
+window.onload = () => {
     renderingElementsDesktop()
 
-    if(document.body.clientWidth < 768){
+    if (document.body.clientWidth < 768) {
         inputSaoPaulo.removeAttribute("required")
         inputSantos.removeAttribute("required")
         selectUnidade.setAttribute("required", "required")
-    } else{
+    } else {
         selectUnidade.removeAttribute("required");
         inputSaoPaulo.setAttribute("required", "required");
         inputSaoPaulo.setAttribute("required", "required");
@@ -162,19 +162,27 @@ window.onload= ()=> {
 // Enviar agendamento
 const formAgendar = document.getElementById("form-agendar")
 
-formAgendar.addEventListener("submit", function(e) {
-    e.preventDefault()
+formAgendar.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     if (data.value != 0) {
-        swal("🍊", "agendamento realizado")
+        swal("🍊", "agendamento realizado");
     }
 
     //Requisição para o backend
+    const userId = localStorage.getItem("id_user");
+    let unidade;
 
-    const unidade = document.querySelector('input[name="unidade"]')
-    const userId = '9';
+    if (document.body.clientWidth < 768) {
+        unidade = selectUnidade.options[selectUnidade.selectedIndex].value;
+    } else if (inputSaoPaulo.checked) {
+        unidade = inputSaoPaulo.value;
+    } else if (inputSantos.checked) {
+        unidade = inputSantos.value;
+    }
+
     const schedule = {
-        location_schedule: unidade.value,
+        location_schedule: unidade,
         date: inputData.value,
         id_users: userId
     }
@@ -188,5 +196,5 @@ formAgendar.addEventListener("submit", function(e) {
         body: JSON.stringify(schedule)
     })
 
-    console.log(inputData.value, unidade.value)
+    console.log(inputData.value, unidade);
 })
