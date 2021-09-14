@@ -134,7 +134,7 @@ select:focus,select:active {
     cursor: pointer;
     font-weight: bold;
     /* position:absolute; */
-    bottom:0; 
+    bottom:0;
 }
 
 h1 {
