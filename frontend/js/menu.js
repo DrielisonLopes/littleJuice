@@ -14,6 +14,7 @@ function showMenu() {
 
 imgMenu.onclick= showMenu;
 
+handleDesktop();
 function handleDesktop (){
     if (document.body.clientWidth >= 768) {
         const imgConfig = document.getElementById("img-config");
@@ -43,5 +44,4 @@ function handleDesktop (){
     }
 }
 
-document.body.onresize = handleDesktop;
-window.onload = handleDesktop;
+document.body.addEventListener('resize', handleDesktop);
