@@ -24,7 +24,7 @@ export class ScheduleService {
   }
 
   async findAllSchedulesByDateAndLocation(date: string, location_schedule: string) {
-    return await Schedule.findAll({
+    return await this.scheduleModel.findAll({
       where: {
         date,
         location_schedule,
@@ -33,7 +33,7 @@ export class ScheduleService {
   }
 
   async countAllScheduleByDateAndLocation (date: string, location_schedule: string) {
-    return await Schedule.count({
+    return await this.scheduleModel.count({
       where: {
         date,
         location_schedule,
@@ -55,7 +55,7 @@ export class ScheduleService {
     //percentual liberado em Santos
     const percentSantos = 0.4;
 
-    const result = await Schedule.count({
+    const result_count = await Schedule.count({
       where: {
         date,
         location_schedule,
@@ -64,12 +64,12 @@ export class ScheduleService {
 
     // retorna a quantidade de vagas disponíveis em SP
     if(location_schedule === "São Paulo") {
-      return capacitySP*percentSP - result;
+      return capacitySP*percentSP - result_count;
     }
 
     // retorna a quantidade de vagas disponíveis em Santos
      if (location_schedule === "Santos") {
-      return capacitySantos*percentSantos - result;
+      return capacitySantos*percentSantos - result_count;
     }
   }
 
@@ -82,6 +82,7 @@ export class ScheduleService {
   async create(createScheduleDto: CreateScheduleDto) {
     const result = await this.vacancyByDateAndLocation(createScheduleDto.date, createScheduleDto.location_schedule);
     if (result > 0) {
+      console.log(result)
       return this.scheduleModel.create(createScheduleDto);      
     }
     else {
@@ -89,8 +90,8 @@ export class ScheduleService {
         status: HttpStatus.NOT_ACCEPTABLE,
         error: 'There is no vacancies available.',
       }, HttpStatus.NOT_ACCEPTABLE);
-      }
     }
+  }
 
   async update(id: number, updateScheduleDto: UpdateScheduleDto) {
     const schedule = await this.scheduleModel.findByPk(id, {
