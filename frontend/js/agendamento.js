@@ -12,6 +12,9 @@ function renderingElementsDesktop() {
 
     //Lógica para desktop
     if (document.body.clientWidth >= 768) {
+        const nameUser = localStorage.getItem('name_user')
+        const saudacao = document.getElementById('saudacao');
+        saudacao.innerHTML = `olá, ${nameUser}`;
 
         selectUnidade.removeAttribute("required");
         inputSaoPaulo.setAttribute("required", "required");
