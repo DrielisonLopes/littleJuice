@@ -15,6 +15,7 @@ function loginUser(e) {
                 window.alert('Senha incorreta!');
             } else {
                 localStorage.setItem("id_user", infoUser.id);
+                localStorage.setItem("name_user", infoUser.name);
                 window.location = '../pages/principal.html';
             }
         });
