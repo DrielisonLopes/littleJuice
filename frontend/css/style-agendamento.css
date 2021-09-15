@@ -32,7 +32,6 @@ body{
     display: none;
 }
 
-
 form{
     margin-top: 4vh;
     display: flex;
@@ -154,7 +153,6 @@ form{
         justify-content: center;
         width: 300px;
         margin-top: 1em;
-
     }
 
     .input-unidade, .label-unidade{
@@ -214,7 +212,6 @@ form{
     #div-agendamentos{
         justify-content: space-around;
         margin-top: 20vh;
-
     }
 
     #div-futuros-anteriores{
@@ -247,4 +244,7 @@ form{
         font-weight: 700;
     }
 
+    #voltar{
+        /* visibility: hidden; */
+    }
 }
