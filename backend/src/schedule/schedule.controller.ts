@@ -2,7 +2,6 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, Query } fr
 import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
-import { Schedule } from './entities/schedule.entity';
 
 @Controller('schedule')
 export class ScheduleController {
@@ -14,16 +13,24 @@ export class ScheduleController {
   }
 
   @Get('user')
-  findByUsers(@Query('id_users') id_users: number) {
-    Schedule.findOne().then((schedule) => {
-      schedule.id_users = id_users
-    })
+  findByIdUsers(@Query('id_users') id_users: number) {
     return this.scheduleService.findById_Users(id_users);
   }
 
+  @Get('all')
+  async findAllSchedulesByDateAndLocation(@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
+    console.log(date);
+    return this.scheduleService.findAllSchedulesByDateAndLocation(date, location_schedule);
+  }
+
   @Get('count')
-  async countAllForDateAndLocation(@Query('date') date: Date, @Query('location_schedule') location_schedule: string) {
-    return this.scheduleService.countAllForDateAndLocation(date, location_schedule);
+  async countAllScheduleByDateAndLocation (@Query('date') date: string, @Query('location_schedule') location_schedule: string) {
+    return this.scheduleService.countAllScheduleByDateAndLocation(date, location_schedule);
+  }
+
+  @Get('vacancy')
+  async vacancyByDateAndLocation (@Query ('date') date: string, @Query('location_schedule') location_schedule: string) {
+    return this.scheduleService.vacancyByDateAndLocation(date, location_schedule);
   }
 
   @Get(':id')
@@ -33,7 +40,7 @@ export class ScheduleController {
 
   @Post()
   create(@Body() createScheduleDto: CreateScheduleDto) {
-    this.scheduleService.create(createScheduleDto);
+    return this.scheduleService.create(createScheduleDto);
   }
   
   @Patch(':id')

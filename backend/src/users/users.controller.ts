@@ -30,7 +30,7 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    this.usersService.create(createUserDto);
+    return this.usersService.create(createUserDto);
   }
 
   @Patch(':id')

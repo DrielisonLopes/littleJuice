@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
@@ -16,21 +16,61 @@ export class ScheduleService {
   }
 
   async findById_Users(id_users: number) {
-    return await this.scheduleModel.findOne({
+    return await this.scheduleModel.findAll({
       where: {
         id_users,
       },
-      rejectOnEmpty: true,
     })
   }
 
-  async countAllForDateAndLocation(date: Date, location_schedule: string) {
-    await Schedule.findAll({
+  async findAllSchedulesByDateAndLocation(date: string, location_schedule: string) {
+    return await Schedule.findAll({
       where: {
         date,
         location_schedule,
       }
-    })
+    });
+  }
+
+  async countAllScheduleByDateAndLocation (date: string, location_schedule: string) {
+    return await Schedule.count({
+      where: {
+        date,
+        location_schedule,
+      },
+    });
+  }
+
+  async vacancyByDateAndLocation (date: string, location_schedule: string) {
+    
+    //capacidade total de São Paulo
+    const capacitySP = 600;
+
+    //capacidade total de Santos
+    const capacitySantos = 100;
+
+    // percentual liberado em SP
+    const percentSP = 0.4;
+
+    //percentual liberado em Santos
+    const percentSantos = 0.4;
+
+    const result = await Schedule.count({
+      where: {
+        date,
+        location_schedule,
+      },
+    });
+
+    // retorna a quantidade de vagas disponíveis em SP
+    if(location_schedule === "São Paulo") {
+      return capacitySP*percentSP - result;
+    }
+
+    // retorna a quantidade de vagas disponíveis em Santos
+     if (location_schedule === "Santos") {
+      return capacitySantos*percentSantos - result;
+    }
   }
 
   findById(id: number) {
@@ -40,16 +80,18 @@ export class ScheduleService {
   }
 
   async create(createScheduleDto: CreateScheduleDto) {
-    return this.scheduleModel.create(createScheduleDto);
+    const result = await this.vacancyByDateAndLocation(createScheduleDto.date, createScheduleDto.location_schedule);
+    if (result > 0) {
+      return this.scheduleModel.create(createScheduleDto);      
+    }
+    else {
+      throw new HttpException({
+        status: HttpStatus.NOT_ACCEPTABLE,
+        error: 'There is no vacancies available.',
+      }, HttpStatus.NOT_ACCEPTABLE);
+      }
     }
 
-  // Cria agenda e valida se ainda tem vagas no dia
-  // async create(createScheduleDto: CreateScheduleDto) {
-  //   if (await countAllForDateAndLocation(Schedule.date, Schedule.location_schedule) < 239){
-  //     return this.scheduleModel.create(createScheduleDto);
-  //   }
-  // }
-  
   async update(id: number, updateScheduleDto: UpdateScheduleDto) {
     const schedule = await this.scheduleModel.findByPk(id, {
       rejectOnEmpty: true,
