@@ -1,10 +1,10 @@
 const selectFuturos = document.getElementById("select-futuros");
 const selectAnteriores = document.getElementById("select-anteriores");
 
-const agendamentos = fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_user')}`,{
+const agendamentos = fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_user')}`, {
     method: 'GET',
-}).then(response =>{
-    response.json().then(data =>{
+}).then(response => {
+    response.json().then(data => {
         console.log(data)
         return data;
     })
@@ -13,13 +13,13 @@ const agendamentos = fetch(`http://127.0.0.1:3000/schedule/user?id_users=${local
 selectFuturos.addEventListener("click", addBorderFuturos)
 selectAnteriores.addEventListener("click", addBorderAnteriores)
 
-function addBorderFuturos(){
+function addBorderFuturos() {
     selectAnteriores.style.removeProperty("border")
     selectFuturos.style.borderBottom = "3px #FFFFFF solid"
     console.log(agendamentos)
 }
 
-function addBorderAnteriores(){
+function addBorderAnteriores() {
     selectFuturos.style.removeProperty("border")
     selectAnteriores.style.borderBottom = "3px #FFFFFF solid"
 }

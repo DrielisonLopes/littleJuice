@@ -55,12 +55,20 @@ h1{
     cursor: pointer;
 }
 
+#filtrar-agendamentos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 select{
-    width: 180px;
+    width: 120px;
     height: 30px;
-    padding-left: 1em;
+    padding: .1em;
     color: #36357E;
     font-size: 18px;
     font-weight: 600;
     border-radius: 15px;
+    margin: .2em;
+    text-align: center;
 }
