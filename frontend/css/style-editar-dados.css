@@ -22,8 +22,6 @@ main{
     align-items: center;
 }
 
-
-
 #div-title-editar-dados{
     display: flex;
     justify-content: center; 
@@ -115,3 +113,33 @@ button{
     box-shadow: -4px -11px 0px 1px #FE4400, 0px 4px 4px 4px rgba(0,0,0,0.31);;
 }
 
+@media only screen and (min-width: 768px){
+    #header-desktop{
+        background-color: #2A2962;
+    }
+
+    #saudacao{
+        color: #FFFFFF;
+    }
+
+    .container{
+        height: 100%;
+        align-items: center;
+        padding: 6vh 0 0 0;
+        width: 100%;
+    }
+
+    #div-title-editar-dados{ 
+        margin-bottom: 12vh;
+    }
+
+    #div-editar-dados{
+        margin-bottom: 0;
+    }
+
+    footer{
+        color: #2A2962;
+        font-weight: 900;
+        margin-bottom: 6vh;
+    }
+}

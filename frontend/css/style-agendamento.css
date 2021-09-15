@@ -3,10 +3,6 @@ body{
     width: 100%;
 }
 
-header{
-    display: none;
-}
-
 #container-principal, .container{
     display: flex;
     flex-direction: column;
@@ -110,29 +106,6 @@ form{
         background-color: #2A2962;
     }
 
-    header{
-        display: block;
-        background-color: #A8A8D0;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        font-size: 20px;
-        color: #2A2962;
-        padding: .5em;
-    }
-
-    menu{
-        display: none;
-    }
-
-    #div-spans span{
-        margin-right: 2em;
-    }
-
-    #saudacao{
-        cursor: default;
-    }
-
     #link-sair{
         font-weight: 900;
         text-decoration: none;
@@ -203,6 +176,7 @@ form{
         justify-content: space-around;
         align-items: center;
         width: 50%;
+        margin: 0 2em 0 2em;
     }
 
     #title-consultar-agendamentos{
