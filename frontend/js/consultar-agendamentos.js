@@ -1,12 +1,22 @@
 const selectFuturos = document.getElementById("select-futuros");
 const selectAnteriores = document.getElementById("select-anteriores");
 
+const agendamentos = fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_user')}`,{
+    method: 'GET',
+}).then(response =>{
+    response.json().then(data =>{
+        console.log(data)
+        return data;
+    })
+})
+
 selectFuturos.addEventListener("click", addBorderFuturos)
 selectAnteriores.addEventListener("click", addBorderAnteriores)
 
 function addBorderFuturos(){
     selectAnteriores.style.removeProperty("border")
     selectFuturos.style.borderBottom = "3px #FFFFFF solid"
+    console.log(agendamentos)
 }
 
 function addBorderAnteriores(){
