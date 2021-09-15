@@ -72,8 +72,7 @@ function renderingElementsDesktop() {
 
         //Mudança de elementos
         const titleAgendar = document.getElementById("title-agendar");
-        const titleConsultarAgendamentos = document.getElementById
-            ("title-consultar-agendamentos");
+        const titleConsultarAgendamentos = document.getElementById("title-consultar-agendamentos");
         const container1 = document.getElementById("container1");
         const container2 = document.getElementById("container2");
         const divAgendamentos = document.getElementById("div-agendamentos");
@@ -134,6 +133,11 @@ function renderingElementsDesktop() {
 
 
 document.body.onresize = () => {
+
+    if(divAgendamentos.style.display == "flex" && document.body.clientWidth<760){
+        window.location = '../pages/consultar-agendamentos.html'
+    }
+
     renderingElementsDesktop()
 
     if (document.body.clientWidth < 768) {
