@@ -30,7 +30,6 @@ formCadastro.addEventListener("submit", function(e) {
     } else if (inputHomeOffice.checked) {
         unidade = inputHomeOffice.value;
     }
-    console.log(nome.value, email.value, unidade, senha.value);
 
     const user = {
         name: nome.value, 
@@ -38,8 +37,7 @@ formCadastro.addEventListener("submit", function(e) {
         location: unidade, 
         password: senha.value
     }
-    console.log(user)
-    console.log(typeof (user))
+
     fetch("http://127.0.0.1:3000/users", {
         method: 'POST',
         headers: {
