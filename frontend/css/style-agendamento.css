@@ -276,4 +276,8 @@ form{
         font-weight: 700;
     }
 
+    #opcoes-config p a {
+        color: #2A2962;
+    }
+
 }
