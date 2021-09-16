@@ -5,11 +5,118 @@ const inputData = document.getElementById("input-data");
 const inputSaoPaulo = document.getElementById("sao-paulo");
 const inputSantos = document.getElementById("santos");
 const informacoesDia = document.getElementById("div-informacoes-dia");
+const informacoesDiaMobile = document.getElementById("div-informacoes-dia-mobile");
 const divAgendamentos = document.getElementById("div-agendamentos");
+
+
+function fetchInformacoesDiaMobile() {
+    fetch(`http://127.0.0.1:3000/schedule/count?date=${inputData.value}&location_schedule=${selectUnidade.value}`, {
+        method: 'GET'
+    }).then((response) => {
+        response.json().then((data) => {
+            informacoesDiaMobile.innerHTML = "";
+            let p = document.createElement('p')
+            let pessoasAgendadas = document.createTextNode('Pessoas agendadas: ' + data);
+            p.appendChild(pessoasAgendadas);
+            p.id = "pessoas-agendadas"
+            informacoesDiaMobile.appendChild(p);
+        }).then(() => {
+            fetch(`http://127.0.0.1:3000/schedule/vacancy?date=${inputData.value}&location_schedule=${selectUnidade.value}`, {
+                method: 'GET'
+            }).then((response) => {
+                response.json().then((data) => {
+                    let p = document.createElement('p')
+                    let vagasDisponiveis = document.createTextNode('Vagas disponíveis: ' + data);
+                    p.appendChild(vagasDisponiveis);
+                    p.id = "vagas-disponiveis"
+                    informacoesDiaMobile.appendChild(p);
+                })
+            })
+        })
+    })
+}
+
+function fetchInformacoesDiaDesktop(unidade){
+    fetch(`http://127.0.0.1:3000/schedule/count?date=${inputData.value}&location_schedule=${unidade}`, {
+        method: 'GET'
+    }).then((response) => {
+        response.json().then((data) => {
+            informacoesDia.innerHTML = "";
+            let p = document.createElement('p')
+            let pessoasAgendadas = document.createTextNode('Pessoas agendadas: ' + data);
+            p.appendChild(pessoasAgendadas);
+            p.id = "pessoas-agendadas"
+            informacoesDia.appendChild(p);
+        }).then(() => {
+            fetch(`http://127.0.0.1:3000/schedule/vacancy?date=${inputData.value}&location_schedule=${unidade}`, {
+                method: 'GET'
+            }).then((response) => {
+                response.json().then((data) => {
+                    let p = document.createElement('p')
+                    let vagasDisponiveis = document.createTextNode('Vagas disponíveis: ' + data);
+                    p.appendChild(vagasDisponiveis);
+                    p.id = "vagas-disponiveis"
+                    informacoesDia.appendChild(p);
+                })
+            })
+        })
+    })
+}
+
+selectUnidade.oninput = () => {
+    if (selectUnidade.value && inputData.value && document.body.clientWidth < 768) {
+        fetchInformacoesDiaMobile();
+    } else {
+        return;
+    }
+}
+
+inputData.oninput = () => {
+    if (selectUnidade.value && inputData.value && document.body.clientWidth < 768) {
+        fetchInformacoesDiaMobile();
+    } else if (inputSaoPaulo.checked) {
+        fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+    } else if (inputSantos.checked) {
+        fetchInformacoesDiaDesktop(inputSantos.value)
+    }
+}
+
+inputSaoPaulo.oninput = ()=>{
+    console.log('teste')
+    if(inputSaoPaulo.checked && inputData.value){
+        fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+    }
+}
+
+inputSantos.oninput = ()=>{
+    if(inputSantos.checked && inputData.value){
+        fetchInformacoesDiaDesktop(inputSantos.value)
+    }
+}
 
 
 function renderingElementsDesktop() {
 
+    inputData.addEventListener('input', () => {
+        
+        if (inputSaoPaulo.checked) {
+            fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+        } else if (inputSantos.checked) {
+            fetchInformacoesDiaDesktop(inputSantos.value)
+        }
+    })
+    inputSaoPaulo.addEventListener('input', ()=>{
+        console.log('teste')
+        if(inputSaoPaulo.checked && inputData.value){
+            fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+        }
+    })
+    
+    inputSantos.addEventListener('input',  ()=>{
+        if(inputSantos.checked && inputData.value){
+            fetchInformacoesDiaDesktop(inputSantos.value)
+        }
+    })
     //Lógica para desktop
     if (document.body.clientWidth >= 768) {
         const nameUser = localStorage.getItem('name_user')
@@ -158,7 +265,7 @@ function renderingElementsDesktop() {
                     confirm('Deseja cancelar esse agendamento?');
                     fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
                         method: 'DELETE',
-                    }).then(() =>{
+                    }).then(() => {
                         this.parentNode.remove();
                         alert('Agendamento cancelado com sucesso!')
                     })
