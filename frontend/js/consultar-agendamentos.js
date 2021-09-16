@@ -20,9 +20,9 @@ function listAgendamentosFuturos() {
         let li = document.createElement('li');
         let dataAgendamento = document.createTextNode(agendamento.date.substring(0, 10).split('-').reverse().join('/'));
         let location;
-        if(agendamento.location_schedule == 'sao-paulo'){
+        if (agendamento.location_schedule == 'sao-paulo') {
             location = document.createTextNode('São Paulo')
-        } else{
+        } else {
             location = document.createTextNode('Santos')
         };
         let traco = document.createTextNode(' - ');
@@ -33,10 +33,10 @@ function listAgendamentosFuturos() {
 
         let xButton = document.createElement('button');
         xButton.innerHTML = 'X';
+        xButton.id = agendamento.id;
         xButton.className = 'remove-agendamento';
         li.appendChild(xButton);
     });
-
 
     buttonEvents();
 
@@ -48,8 +48,12 @@ function listAgendamentosFuturos() {
 
     function deleteAgendamento() {
         confirm('Deseja cancelar esse agendamento?');
-        this.parentNode.remove();
-        alert('Agendamento cancelado com sucesso!')
+        fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
+            method: 'DELETE',
+        }).then(() =>{
+            this.parentNode.remove();
+            alert('Agendamento cancelado com sucesso!')
+        })
     }
 }
 

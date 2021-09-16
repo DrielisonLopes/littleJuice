@@ -83,10 +83,6 @@ function renderingElementsDesktop() {
         titleAgendar.addEventListener("click", addContent);
         titleConsultarAgendamentos.addEventListener("click", addContent2);
 
-        window.onload = () => {
-            titleAgendar.style.backgroundColor = "#FE4400"
-        }
-
         function addContent() {
             titleConsultarAgendamentos.style.removeProperty("background-color");
             titleAgendar.style.removeProperty("background-color");
@@ -145,10 +141,10 @@ function renderingElementsDesktop() {
 
                     let xButton = document.createElement('button');
                     xButton.innerHTML = 'X';
+                    xButton.id = agendamento.id;
                     xButton.className = 'remove-agendamento';
                     li.appendChild(xButton);
                 });
-
 
                 buttonEvents();
 
@@ -160,8 +156,12 @@ function renderingElementsDesktop() {
 
                 function deleteAgendamento() {
                     confirm('Deseja cancelar esse agendamento?');
-                    this.parentNode.remove();
-                    alert('Agendamento cancelado com sucesso!')
+                    fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
+                        method: 'DELETE',
+                    }).then(() =>{
+                        this.parentNode.remove();
+                        alert('Agendamento cancelado com sucesso!')
+                    })
                 }
             }
         }
@@ -244,7 +244,6 @@ formAgendar.addEventListener("submit", function (e) {
 
     fetch("http://127.0.0.1:3000/schedule", {
         method: 'POST',
-
         headers: {
             'Content-Type': 'application/json'
         },

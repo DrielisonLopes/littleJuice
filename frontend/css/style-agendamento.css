@@ -60,7 +60,7 @@ form{
 #select-unidade{
     background-color: #f6d8cd;
     color: #2A2962;
-    width: 114px;
+    width: 130px;
     font-size: 19px;
 }
 
@@ -94,13 +94,31 @@ form{
     cursor: default;
 }
 
+#form-agendar:invalid #div-informacoes-dia-mobile{
+    display: none;
+}
+
+#div-informacoes-dia-mobile{
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 413px;
+    height: 62px;
+    margin-top: .5em;
+}
+
 #div-agendamentos{
     display:none;
 }
 
 
 @media only screen and (min-width: 768px){
-
+    #div-informacoes-dia-mobile{
+        display: none;
+    }
     body{
         background-color: #2A2962;
     }
@@ -188,12 +206,14 @@ form{
         cursor: pointer;
     }
 
+    #form-agendar:invalid #div-informacoes-dia{
+        display: none;
+    }
+
     #div-informacoes-dia{
-        background-color: #A8A8D0;
-        color: #2A2962;
+        color: #ffffff;
         font-size: 25px;
         font-weight: 800;
-        border-radius: 70px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
