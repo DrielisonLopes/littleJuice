@@ -229,15 +229,16 @@ function renderingElementsDesktop() {
                 agendamentos.reverse()
 
                 let ul = document.getElementById('lista-agendamentos');
+                ul.innerHTML = ''
                 let itemsButtons = document.getElementsByClassName('remove-agendamento');
 
                 agendamentos.forEach(agendamento => {
                     let li = document.createElement('li');
                     let dataAgendamento = document.createTextNode(agendamento.date.substring(0, 10).split('-').reverse().join('/'));
                     let location;
-                    if (agendamento.location_schedule == 'sao-paulo') {
+                    if (agendamento.location_schedule == 'São Paulo') {
                         location = document.createTextNode('São Paulo')
-                    } else {
+                    } else if (agendamento.location_schedule == 'Santos'){
                         location = document.createTextNode('Santos')
                     };
                     let traco = document.createTextNode(' - ');

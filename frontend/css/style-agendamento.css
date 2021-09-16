@@ -205,6 +205,7 @@ form{
         border-radius: 90px 90px 0px 90px;;
         color: #FFFFFF;  
         cursor: pointer;
+        padding: .1em .2em .1em .2em;
     }
 
     #form-agendar:invalid #div-informacoes-dia{
