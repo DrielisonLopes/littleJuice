@@ -7,8 +7,6 @@ Little Juice é uma aplicação  web e mobile construída durante a edição do 
 
 O projeto consiste em uma aplicação web responsiva chamada **Little Juice** na qual os funcionários da FCamara retomando aos poucos suas atividades presenciais ao escritório, vão poder agendar suas visitas a uma das filiais, respeitando os limites impostos pela Anvisa.
 
-O layout foi inspirado ...
-
 ## Funcionalidades
    - **Acesso ao calendário para agendamentos**
    - **Consulta de agendamentos anteriores e futuros**
@@ -43,12 +41,14 @@ O layout foi inspirado ...
 - Typescript
 - Node
 - Nests
+- Sequelize
+- PostgreSQL
 
 # Autores
 
-Nome   | GitHub | Linkedin | Email
+Nome   | GitHub | Linkedin | Função
 --------- | ------ | -------- | -----------
 Agnaldo Pereira | [agnaldo26](https://github.com/agnaldo26) | [Agnaldo Pereira](https://www.linkedin.com/in/agnaldo-pereira-de-souza-silva-filho-8823081a6/) | FullStack 
-Bruna Scheffelmeier | []() | [Bruna Scheffelmeier]() | UX Design
+Bruna Scheffelmeier | []() | [Bruna Scheffelmeier](https://www.linkedin.com/in/bruna-scheffelmeier-197285219/) | UX Design
 Drielison Lopes | [DrielisonLopes](https://github.com/DrielisonLopes) | [Drielison Lopes](https://www.linkedin.com/in/drielison-lopes/) | FullStack
 Rodrigo Bernandes | [rsfbernardes](https://github.com/rsfbernardes) | [Rodrigo Bernandes](https://www.linkedin.com/in/rodrigobernardes10/) | FullStack
