@@ -147,7 +147,6 @@ form{
         font-weight: bold;
         font-size: 30px;
         text-align: center;
-        padding: .2em .3em .2em .3em;
         border-radius: 90px 90px 0px 90px;;
         color: #FFFFFF;  
         cursor: default;
@@ -156,7 +155,7 @@ form{
     }
 
     form{
-        margin-top: 1vh;
+        margin-top: 0;
     }
 
     #calendario{
@@ -203,7 +202,6 @@ form{
         font-weight: bold;
         font-size: 30px;
         text-align: center;
-        padding: .2em .3em .2em .3em;
         border-radius: 90px 90px 0px 90px;;
         color: #FFFFFF;  
         cursor: pointer;

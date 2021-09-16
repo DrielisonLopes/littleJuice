@@ -11,10 +11,10 @@ import { ScheduleModule } from './schedule/schedule.module';
       // username: 'hkylinrv',
       // password: 'gbm30E8bAYscYz0teACZF8ujzJY4ESFG',
       // database: 'hkylinrv',
-      host: 'localhost',
-      username: 'postgres',
-      password: '1032430x',
-      database: 'littleJuice',
+      host: 'tuffi.db.elephantsql.com',
+      username: 'dilpdwcp',
+      password: 'JNiFeJ47IvMej_WU_JYYTs12NkfhkyjP',
+      database: 'dilpdwcp',
       port: 5432,
       synchronize: true,    // faz o mapeamento das entidades e cria as tabelas no banco automaticamente
       autoLoadModels: true   // carrega os modelos automaticamente
