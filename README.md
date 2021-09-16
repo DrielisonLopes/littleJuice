@@ -25,13 +25,13 @@ O layout foi inspirado ...
 [Protótipo no Figma](https://www.figma.com/file/Z4mRu2qAWZPy84EZP8oRfQ/LittleJuice?node-id=0%3A1)
 
 ## Layout Web
-
-### Home
-[Home]
-
+<img src="./frontend/assets/github/agendamento.png" width="500px" title="agendamento">
+<img src="./frontend/assets/github/consulta.png" width="500px" title="consulta">
 
 ## Layout Mobile
-[Mobile]
+<img src="./frontend/assets/github/loading page.png" width="130px" title="loading page">
+<img src="./frontend/assets/github/login.png" width="130px" title="login">
+<img src="./frontend/assets/github/principal.png" width="130px" title="principal">
 
 # Tecnologias utilizadas 
 ## Front-end
