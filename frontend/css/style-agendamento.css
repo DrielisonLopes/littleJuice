@@ -317,4 +317,8 @@ form{
         margin-bottom: .3em;
     }
 
+    #opcoes-config p a {
+        color: #2A2962;
+    }
+
 }
