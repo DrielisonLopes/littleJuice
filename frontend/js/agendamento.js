@@ -7,7 +7,7 @@ const inputSantos = document.getElementById("santos");
 const informacoesDia = document.getElementById("div-informacoes-dia");
 const informacoesDiaMobile = document.getElementById("div-informacoes-dia-mobile");
 const divAgendamentos = document.getElementById("div-agendamentos");
-
+const alertProximoAgendamento = document.getElementById('proximo-agendamento');
 
 function fetchInformacoesDiaMobile() {
     fetch(`http://127.0.0.1:3000/schedule/count?date=${inputData.value}&location_schedule=${selectUnidade.value}`, {
@@ -226,8 +226,7 @@ function renderingElementsDesktop() {
             })
 
             function listAgendamentosFuturos() {
-                agendamentos.reverse()
-
+                alertProximoAgendamento.innerHTML = `próximo: ${agendamentos[0].date.substring(0, 10).split('-').reverse().join('/')} - ${agendamentos[0].location_schedule}`;
                 let ul = document.getElementById('lista-agendamentos');
                 ul.innerHTML = ''
                 let itemsButtons = document.getElementsByClassName('remove-agendamento');

@@ -233,7 +233,8 @@ form{
 
     #div-agendamentos{
         justify-content: space-around;
-        margin-top: 20vh;
+        align-items: center;
+        margin-top: 2vh;
     }
 
     #div-futuros-anteriores{
@@ -254,6 +255,9 @@ form{
 
     ul{
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     li{
@@ -281,6 +285,25 @@ form{
         padding: .3em;
     }
 
+    #div-alerta{
+        height: 78px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .5em;
+    }
+    
+    #div-alerta img{
+        height: 78px;
+    }
+    
+    #proximo-agendamento{
+        color: #ffffff;
+        font-size:20px;
+        font-weight: 900;
+        text-align: center;
+    }
+
     #filtrar-agendamentos{
         display: flex;
         flex-direction: column;
@@ -293,6 +316,7 @@ form{
         padding: .3em;
         text-align: center;
         font-weight: 700;
+        margin-bottom: .3em;
     }
 
 }

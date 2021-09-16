@@ -1,5 +1,6 @@
 const selectFuturos = document.getElementById("select-futuros");
 const selectAnteriores = document.getElementById("select-anteriores");
+const alertProximoAgendamento = document.getElementById('proximo-agendamento');
 
 let agendamentos;
 fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_user')}`, {
@@ -11,7 +12,7 @@ fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_u
 })
 
 function listAgendamentosFuturos() {
-    agendamentos.reverse()
+    alertProximoAgendamento.innerHTML = `próximo: ${agendamentos[0].date.substring(0, 10).split('-').reverse().join('/')} - ${agendamentos[0].location_schedule}`;
 
     let ul = document.getElementById('lista-agendamentos');
     let itemsButtons = document.getElementsByClassName('remove-agendamento');
