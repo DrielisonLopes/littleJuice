@@ -29,6 +29,10 @@ function handleDesktop() {
         const config = document.getElementById("div-config");
         const sair = document.getElementById('link-sair');
 
+        const nameUser = localStorage.getItem('name_user')
+        const saudacao = document.getElementById('saudacao');
+        saudacao.innerHTML = `olá, ${nameUser}`;
+
         sair.onclick = () => {
             localStorage.removeItem('id_user')
             localStorage.removeItem('name_user')

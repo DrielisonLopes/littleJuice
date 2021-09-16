@@ -35,8 +35,7 @@ h1{
     cursor: default;
 }
 
-#select-futuros {
-    background-color: #FE4400;
+#select-futuros, #select-anteriores {
     border-radius: 30px;
     height: 30px;
     width: 16vh;

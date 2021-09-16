@@ -94,8 +94,7 @@ menu{
 
 #opcoes-config p a{
     display: block;
-    text-decoration: none;
-    color: #FFFFFF;
+    color: #2A2962;
     border-radius: 20px;
     font-size: 24px;
     font-weight: 900;
@@ -152,9 +151,6 @@ h1 {
         font-size: 20px;
         color: #2A2962;
         padding: .5em;
-    }
-
-    #header-desktop{
         background-color: #A8A8D0;
     }
 

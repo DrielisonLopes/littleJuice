@@ -94,7 +94,6 @@ inputSantos.oninput = ()=>{
     }
 }
 
-
 function renderingElementsDesktop() {
 
     inputData.addEventListener('input', () => {
@@ -119,9 +118,6 @@ function renderingElementsDesktop() {
     })
     //Lógica para desktop
     if (document.body.clientWidth >= 768) {
-        const nameUser = localStorage.getItem('name_user')
-        const saudacao = document.getElementById('saudacao');
-        saudacao.innerHTML = `olá, ${nameUser}`;
 
         selectUnidade.removeAttribute("required");
         inputSaoPaulo.setAttribute("required", "required");
@@ -226,7 +222,12 @@ function renderingElementsDesktop() {
             })
 
             function listAgendamentosFuturos() {
-                alertProximoAgendamento.innerHTML = `próximo: ${agendamentos[0].date.substring(0, 10).split('-').reverse().join('/')} - ${agendamentos[0].location_schedule}`;
+                if(agendamentos.length >=1){
+                    alertProximoAgendamento.innerHTML = `próximo: ${agendamentos[0].date.substring(0, 10).split('-').reverse().join('/')} - ${agendamentos[0].location_schedule}`;
+                } else{
+                    alertProximoAgendamento.innerHTML = 'Sem agendamentos'
+                }
+
                 let ul = document.getElementById('lista-agendamentos');
                 ul.innerHTML = ''
                 let itemsButtons = document.getElementsByClassName('remove-agendamento');
@@ -262,13 +263,12 @@ function renderingElementsDesktop() {
                 };
 
                 function deleteAgendamento() {
-                    confirm('Deseja cancelar esse agendamento?');
-                    fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
+                       fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
                         method: 'DELETE',
                     }).then(() => {
                         this.parentNode.remove();
                         alert('Agendamento cancelado com sucesso!')
-                    })
+                    }) 
                 }
             }
         }
@@ -326,11 +326,7 @@ const formAgendar = document.getElementById("form-agendar")
 
 formAgendar.addEventListener("submit", function (e) {
     e.preventDefault();
-
-    if (data.value != 0) {
-        swal("🍊", "agendamento realizado");
-    }
-
+    
     //Requisição para o backend
     const userId = localStorage.getItem("id_user");
     let unidade;
@@ -355,6 +351,8 @@ formAgendar.addEventListener("submit", function (e) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(schedule)
+    }).then(()=>{
+        swal("🍊", "agendamento realizado");
     })
 
 })

@@ -117,7 +117,6 @@ form{
 #voltar{
     color: #FFF;
 }
-
 @media only screen and (min-width: 768px){
     #div-informacoes-dia-mobile{
         display: none;
@@ -128,7 +127,6 @@ form{
 
     #link-sair{
         font-weight: 900;
-        text-decoration: none;
         color: #2A2962;
     }
 

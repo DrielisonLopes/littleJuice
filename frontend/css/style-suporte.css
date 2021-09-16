@@ -29,9 +29,12 @@ h1{
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-top: 6vh;
-    margin-bottom: 6vh;
-    margin-left: 7.2%;
+    margin:  6vh;
+}
+
+a{
+    color: #FFFFFF;
+    font-weight: 900;
 }
 
 #div-editar-dados{
@@ -42,7 +45,7 @@ h1{
     margin-bottom: 26vh;
 }
 
-div {
+#informacoes, .container, #div-email {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,3 +87,14 @@ h4{
     height: 24rem; 
     padding: 1.5rem;
 }
+
+@media only screen and (min-width: 768px){
+    #header-desktop{
+        background-color: #2A2962;
+        margin-bottom: 10px;
+    }
+
+    #saudacao{
+        color: #FFFFFF;
+    }
+} 
