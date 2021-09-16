@@ -267,7 +267,7 @@ function renderingElementsDesktop() {
                         method: 'DELETE',
                     }).then(() => {
                         this.parentNode.remove();
-                        alert('Agendamento cancelado com sucesso!')
+                        swal("🍊", "agendamento cancelado");
                     }) 
                 }
             }

@@ -52,12 +52,11 @@ function listAgendamentosFuturos() {
     };
 
     function deleteAgendamento() {
-        confirm('Deseja cancelar esse agendamento?');
         fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
             method: 'DELETE',
         }).then(() =>{
             this.parentNode.remove();
-            alert('Agendamento cancelado com sucesso!')
+            swal("🍊", "agendamento cancelado");
         })
     }
 }
