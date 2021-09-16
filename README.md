@@ -3,16 +3,17 @@
 
 # Sobre o projeto
 
- é uma aplicação  web e mobile construída durante a edição do Hackathon **FCamara**, evento organizado pelo [Grupo FCamara](https://www.fcamara.com.br/ "Site da FCamara").
+Little Juice é uma aplicação  web e mobile construída durante a edição do Hackathon **FCamara**, evento organizado pelo [Grupo FCamara](https://www.fcamara.com.br/ "Site da FCamara").
 
-O projeto consiste em uma aplicação web responsiva chamada ** tararam** na qual os funcionários da FCamara retomando aos poucos suas atividades presenciais ao escritório, vai poder agendar suas visitas a uma das filiais para respeitando os limites liberados pela Anvisa.
+O projeto consiste em uma aplicação web responsiva chamada **Little Juice** na qual os funcionários da FCamara retomando aos poucos suas atividades presenciais ao escritório, vão poder agendar suas visitas a uma das filiais, respeitando os limites impostos pela Anvisa.
 
 O layout foi inspirado ...
 
 ## Funcionalidades
-   - **Agendamento:**  
-         Escolher os dias livres para trabalho.
-        
+   - **Acesso ao calendário para agendamentos**
+   - **Consulta de agendamentos anteriores e futuros**
+   - **Consulta e disponibilidade de vagas em cada dia**  
+   
 ## Apresentação
 [Pitch] | [Tutorial]
 ## Website
@@ -40,8 +41,8 @@ O layout foi inspirado ...
 
 ## Back-end
 - Typescript
-- Nose
-- eslint
+- Node
+- Nests
 
 # Autores
 

@@ -5,16 +5,119 @@ const inputData = document.getElementById("input-data");
 const inputSaoPaulo = document.getElementById("sao-paulo");
 const inputSantos = document.getElementById("santos");
 const informacoesDia = document.getElementById("div-informacoes-dia");
+const informacoesDiaMobile = document.getElementById("div-informacoes-dia-mobile");
 const divAgendamentos = document.getElementById("div-agendamentos");
+const alertProximoAgendamento = document.getElementById('proximo-agendamento');
 
+function fetchInformacoesDiaMobile() {
+    fetch(`http://127.0.0.1:3000/schedule/count?date=${inputData.value}&location_schedule=${selectUnidade.value}`, {
+        method: 'GET'
+    }).then((response) => {
+        response.json().then((data) => {
+            informacoesDiaMobile.innerHTML = "";
+            let p = document.createElement('p')
+            let pessoasAgendadas = document.createTextNode('Pessoas agendadas: ' + data);
+            p.appendChild(pessoasAgendadas);
+            p.id = "pessoas-agendadas"
+            informacoesDiaMobile.appendChild(p);
+        }).then(() => {
+            fetch(`http://127.0.0.1:3000/schedule/vacancy?date=${inputData.value}&location_schedule=${selectUnidade.value}`, {
+                method: 'GET'
+            }).then((response) => {
+                response.json().then((data) => {
+                    let p = document.createElement('p')
+                    let vagasDisponiveis = document.createTextNode('Vagas disponíveis: ' + data);
+                    p.appendChild(vagasDisponiveis);
+                    p.id = "vagas-disponiveis"
+                    informacoesDiaMobile.appendChild(p);
+                })
+            })
+        })
+    })
+}
+
+function fetchInformacoesDiaDesktop(unidade){
+    fetch(`http://127.0.0.1:3000/schedule/count?date=${inputData.value}&location_schedule=${unidade}`, {
+        method: 'GET'
+    }).then((response) => {
+        response.json().then((data) => {
+            informacoesDia.innerHTML = "";
+            let p = document.createElement('p')
+            let pessoasAgendadas = document.createTextNode('Pessoas agendadas: ' + data);
+            p.appendChild(pessoasAgendadas);
+            p.id = "pessoas-agendadas"
+            informacoesDia.appendChild(p);
+        }).then(() => {
+            fetch(`http://127.0.0.1:3000/schedule/vacancy?date=${inputData.value}&location_schedule=${unidade}`, {
+                method: 'GET'
+            }).then((response) => {
+                response.json().then((data) => {
+                    let p = document.createElement('p')
+                    let vagasDisponiveis = document.createTextNode('Vagas disponíveis: ' + data);
+                    p.appendChild(vagasDisponiveis);
+                    p.id = "vagas-disponiveis"
+                    informacoesDia.appendChild(p);
+                })
+            })
+        })
+    })
+}
+
+selectUnidade.oninput = () => {
+    if (selectUnidade.value && inputData.value && document.body.clientWidth < 768) {
+        fetchInformacoesDiaMobile();
+    } else {
+        return;
+    }
+}
+
+inputData.oninput = () => {
+    if (selectUnidade.value && inputData.value && document.body.clientWidth < 768) {
+        fetchInformacoesDiaMobile();
+    } else if (inputSaoPaulo.checked) {
+        fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+    } else if (inputSantos.checked) {
+        fetchInformacoesDiaDesktop(inputSantos.value)
+    }
+}
+
+inputSaoPaulo.oninput = ()=>{
+    console.log('teste')
+    if(inputSaoPaulo.checked && inputData.value){
+        fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+    }
+}
+
+inputSantos.oninput = ()=>{
+    if(inputSantos.checked && inputData.value){
+        fetchInformacoesDiaDesktop(inputSantos.value)
+    }
+}
 
 function renderingElementsDesktop() {
 
+    inputData.addEventListener('input', () => {
+        
+        if (inputSaoPaulo.checked) {
+            fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+        } else if (inputSantos.checked) {
+            fetchInformacoesDiaDesktop(inputSantos.value)
+        }
+    })
+    inputSaoPaulo.addEventListener('input', ()=>{
+        console.log('teste')
+        if(inputSaoPaulo.checked && inputData.value){
+            fetchInformacoesDiaDesktop(inputSaoPaulo.value)
+        }
+    })
+    
+    inputSantos.addEventListener('input',  ()=>{
+        if(inputSantos.checked && inputData.value){
+            fetchInformacoesDiaDesktop(inputSantos.value)
+        }
+    })
     //Lógica para desktop
     if (document.body.clientWidth >= 768) {
-        const nameUser = localStorage.getItem('name_user')
-        const saudacao = document.getElementById('saudacao');
-        saudacao.innerHTML = `olá, ${nameUser}`;
 
         selectUnidade.removeAttribute("required");
         inputSaoPaulo.setAttribute("required", "required");
@@ -83,10 +186,6 @@ function renderingElementsDesktop() {
         titleAgendar.addEventListener("click", addContent);
         titleConsultarAgendamentos.addEventListener("click", addContent2);
 
-        window.onload = () => {
-            titleAgendar.style.backgroundColor = "#FE4400"
-        }
-
         function addContent() {
             titleConsultarAgendamentos.style.removeProperty("background-color");
             titleAgendar.style.removeProperty("background-color");
@@ -123,18 +222,23 @@ function renderingElementsDesktop() {
             })
 
             function listAgendamentosFuturos() {
-                agendamentos.reverse()
+                if(agendamentos.length >=1){
+                    alertProximoAgendamento.innerHTML = `próximo: ${agendamentos[0].date.substring(0, 10).split('-').reverse().join('/')} - ${agendamentos[0].location_schedule}`;
+                } else{
+                    alertProximoAgendamento.innerHTML = 'Sem agendamentos'
+                }
 
                 let ul = document.getElementById('lista-agendamentos');
+                ul.innerHTML = ''
                 let itemsButtons = document.getElementsByClassName('remove-agendamento');
 
                 agendamentos.forEach(agendamento => {
                     let li = document.createElement('li');
                     let dataAgendamento = document.createTextNode(agendamento.date.substring(0, 10).split('-').reverse().join('/'));
                     let location;
-                    if (agendamento.location_schedule == 'sao-paulo') {
+                    if (agendamento.location_schedule == 'São Paulo') {
                         location = document.createTextNode('São Paulo')
-                    } else {
+                    } else if (agendamento.location_schedule == 'Santos'){
                         location = document.createTextNode('Santos')
                     };
                     let traco = document.createTextNode(' - ');
@@ -145,10 +249,10 @@ function renderingElementsDesktop() {
 
                     let xButton = document.createElement('button');
                     xButton.innerHTML = 'X';
+                    xButton.id = agendamento.id;
                     xButton.className = 'remove-agendamento';
                     li.appendChild(xButton);
                 });
-
 
                 buttonEvents();
 
@@ -159,9 +263,12 @@ function renderingElementsDesktop() {
                 };
 
                 function deleteAgendamento() {
-                    confirm('Deseja cancelar esse agendamento?');
-                    this.parentNode.remove();
-                    alert('Agendamento cancelado com sucesso!')
+                       fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
+                        method: 'DELETE',
+                    }).then(() => {
+                        this.parentNode.remove();
+                        swal("🍊", "agendamento cancelado");
+                    }) 
                 }
             }
         }
@@ -219,11 +326,7 @@ const formAgendar = document.getElementById("form-agendar")
 
 formAgendar.addEventListener("submit", function (e) {
     e.preventDefault();
-
-    if (data.value != 0) {
-        swal("🍊", "agendamento realizado");
-    }
-
+    
     //Requisição para o backend
     const userId = localStorage.getItem("id_user");
     let unidade;
@@ -244,11 +347,12 @@ formAgendar.addEventListener("submit", function (e) {
 
     fetch("http://127.0.0.1:3000/schedule", {
         method: 'POST',
-
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(schedule)
+    }).then(()=>{
+        swal("🍊", "agendamento realizado");
     })
 
 })

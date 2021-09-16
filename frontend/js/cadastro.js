@@ -53,7 +53,7 @@ formCadastro.addEventListener("submit", function(e) {
                 formCadastro.reset();
             })
         }else{
-            // swal("🍊 Little Juice!", "você vai receber um e-mail com um link de confirmação", "success");
+            alert("🍊 Little Juice! \n Você vai receber um e-mail com um link de confirmação");
             window.location = '../pages/login.html'
         }
 

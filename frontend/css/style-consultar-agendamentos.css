@@ -35,13 +35,14 @@ h1{
     cursor: default;
 }
 
-#select-futuros {
-    background-color: #FE4400;
+#select-futuros, #select-anteriores {
     border-radius: 30px;
     height: 30px;
     width: 16vh;
     margin-right: 1em;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #div-futuros-anteriores{
@@ -107,6 +108,25 @@ li button{
     font-size: 22px;
     text-align: center;
     padding: .3em;
+}
+
+#div-alerta{
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .5em;
+}
+
+#div-alerta img{
+    height: 78px;
+}
+
+#proximo-agendamento{
+    color: #ffffff;
+    font-size:20px;
+    font-weight: 700;
+    text-align: center;
 }
 
 #voltar {

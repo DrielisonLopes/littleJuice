@@ -60,7 +60,7 @@ form{
 #select-unidade{
     background-color: #fff;
     color: #2A2962;
-    width: 114px;
+    width: 130px;
     font-size: 19px;
 }
 
@@ -94,6 +94,22 @@ form{
     cursor: default;
 }
 
+#form-agendar:invalid #div-informacoes-dia-mobile{
+    display: none;
+}
+
+#div-informacoes-dia-mobile{
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 413px;
+    height: 62px;
+    margin-top: .5em;
+}
+
 #div-agendamentos{
     display:none;
 }
@@ -101,16 +117,16 @@ form{
 #voltar{
     color: #FFF;
 }
-
 @media only screen and (min-width: 768px){
-
+    #div-informacoes-dia-mobile{
+        display: none;
+    }
     body{
         background-color: #2A2962;
     }
 
     #link-sair{
         font-weight: 900;
-        text-decoration: none;
         color: #2A2962;
     }
 
@@ -129,7 +145,6 @@ form{
         font-weight: bold;
         font-size: 30px;
         text-align: center;
-        padding: .2em .3em .2em .3em;
         border-radius: 90px 90px 0px 90px;;
         color: #FFFFFF;  
         cursor: default;
@@ -138,7 +153,7 @@ form{
     }
 
     form{
-        margin-top: 1vh;
+        margin-top: 0;
     }
 
     #calendario{
@@ -185,18 +200,20 @@ form{
         font-weight: bold;
         font-size: 30px;
         text-align: center;
-        padding: .2em .3em .2em .3em;
         border-radius: 90px 90px 0px 90px;;
         color: #FFFFFF;  
         cursor: pointer;
+        padding: .1em .2em .1em .2em;
+    }
+
+    #form-agendar:invalid #div-informacoes-dia{
+        display: none;
     }
 
     #div-informacoes-dia{
-        background-color: #A8A8D0;
-        color: #2A2962;
+        color: #ffffff;
         font-size: 25px;
         font-weight: 800;
-        border-radius: 70px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -214,7 +231,8 @@ form{
 
     #div-agendamentos{
         justify-content: space-around;
-        margin-top: 20vh;
+        align-items: center;
+        margin-top: 2vh;
     }
 
     #div-futuros-anteriores{
@@ -235,6 +253,9 @@ form{
 
     ul{
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     li{
@@ -262,6 +283,25 @@ form{
         padding: .3em;
     }
 
+    #div-alerta{
+        height: 78px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .5em;
+    }
+    
+    #div-alerta img{
+        height: 78px;
+    }
+    
+    #proximo-agendamento{
+        color: #ffffff;
+        font-size:20px;
+        font-weight: 900;
+        text-align: center;
+    }
+
     #filtrar-agendamentos{
         display: flex;
         flex-direction: column;
@@ -274,6 +314,7 @@ form{
         padding: .3em;
         text-align: center;
         font-weight: 700;
+        margin-bottom: .3em;
     }
 
     #opcoes-config p a {

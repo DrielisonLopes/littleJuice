@@ -1,5 +1,6 @@
 const selectFuturos = document.getElementById("select-futuros");
 const selectAnteriores = document.getElementById("select-anteriores");
+const alertProximoAgendamento = document.getElementById('proximo-agendamento');
 
 let agendamentos;
 fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_user')}`, {
@@ -11,8 +12,12 @@ fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_u
 })
 
 function listAgendamentosFuturos() {
-    agendamentos.reverse()
-
+    if(agendamentos.length >=1){
+        alertProximoAgendamento.innerHTML = `próximo: ${agendamentos[0].date.substring(0, 10).split('-').reverse().join('/')} - ${agendamentos[0].location_schedule}`;
+    } else{
+        alertProximoAgendamento.innerHTML = 'Sem agendamentos'
+    }
+    
     let ul = document.getElementById('lista-agendamentos');
     let itemsButtons = document.getElementsByClassName('remove-agendamento');
 
@@ -20,9 +25,9 @@ function listAgendamentosFuturos() {
         let li = document.createElement('li');
         let dataAgendamento = document.createTextNode(agendamento.date.substring(0, 10).split('-').reverse().join('/'));
         let location;
-        if(agendamento.location_schedule == 'sao-paulo'){
+        if (agendamento.location_schedule == 'São Paulo') {
             location = document.createTextNode('São Paulo')
-        } else{
+        } else if(agendamento.location_schedule == 'Santos'){
             location = document.createTextNode('Santos')
         };
         let traco = document.createTextNode(' - ');
@@ -33,10 +38,10 @@ function listAgendamentosFuturos() {
 
         let xButton = document.createElement('button');
         xButton.innerHTML = 'X';
+        xButton.id = agendamento.id;
         xButton.className = 'remove-agendamento';
         li.appendChild(xButton);
     });
-
 
     buttonEvents();
 
@@ -47,33 +52,36 @@ function listAgendamentosFuturos() {
     };
 
     function deleteAgendamento() {
-        confirm('Deseja cancelar esse agendamento?');
-        this.parentNode.remove();
-        alert('Agendamento cancelado com sucesso!')
+        fetch(`http://127.0.0.1:3000/schedule/${this.id}`, {
+            method: 'DELETE',
+        }).then(() =>{
+            this.parentNode.remove();
+            swal("🍊", "agendamento cancelado");
+        })
     }
 }
 
-selectFuturos.addEventListener("click", addBorderFuturos)
-selectAnteriores.addEventListener("click", addBorderAnteriores)
+selectFuturos.addEventListener("click", addStyleFuturos)
+selectAnteriores.addEventListener("click", addStyleAnteriores)
 
-function addBorderFuturos() {
-    selectAnteriores.style.removeProperty("border")
-    selectFuturos.style.borderBottom = "3px #FFFFFF solid"
+function addStyleFuturos() {
+    selectAnteriores.style.removeProperty("background-color")
+    selectFuturos.style.backgroundColor = "#FE4400"
 }
 
-function addBorderAnteriores() {
-    selectFuturos.style.removeProperty("border")
-    selectAnteriores.style.borderBottom = "3px #FFFFFF solid"
+function addStyleAnteriores() {
+    selectFuturos.style.removeProperty("background-color")
+    selectAnteriores.style.backgroundColor = "#FE4400"
 }
 
 window.onload = () => {
-    addBorderFuturos();
+    addStyleFuturos();
     if (document.body.clientWidth >= 768) {
         window.location.href = "../pages/agendamento.html";
     }
 }
 document.body.onresize = () => {
-    addBorderFuturos();
+    addStyleFuturos();
     if (document.body.clientWidth >= 768) {
         window.location.href = "../pages/agendamento.html";
     }
