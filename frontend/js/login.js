@@ -16,6 +16,8 @@ function loginUser(e) {
             } else {
                 localStorage.setItem("id_user", infoUser.id);
                 localStorage.setItem("name_user", infoUser.name);
+                localStorage.setItem("email_user", infoUser.email);
+                localStorage.setItem("location_user", infoUser.location)
                 window.location = '../pages/principal.html';
             }
         });
