@@ -230,6 +230,35 @@ form{
         cursor: pointer;
     }
 
+    ul{
+        list-style: none;
+    }
+    
+    li{
+        width: 350px;
+        height: 48px;
+        border-radius: 30px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1em;
+        color: #36357E;
+        font-size: 22px;
+        font-weight: 500;
+    }
+    
+    li button{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: #FE5517 solid 1px;
+        color: #FE5517;
+        font-size: 22px;
+        text-align: center;
+        padding: .3em;
+    }
+
     #filtrar-agendamentos{
         display: flex;
         flex-direction: column;
@@ -244,7 +273,4 @@ form{
         font-weight: 700;
     }
 
-    #voltar{
-        /* visibility: hidden; */
-    }
 }

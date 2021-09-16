@@ -11,8 +11,8 @@ function loginUser(e) {
         response.json().then(data => {
             infoUser = data;
         }).then(() => {
-            if (infoUser.password != senha.value) {
-                window.alert('Senha incorreta!');
+            if (infoUser.password != senha.value || infoUser.email != email.value) {
+                window.alert('Email ou senha incorreta!');
             } else {
                 localStorage.setItem("id_user", infoUser.id);
                 localStorage.setItem("name_user", infoUser.name);
