@@ -21,7 +21,6 @@ main{
     cursor: pointer;
 }
 
-
 .div-click img{
     width: 150px;
     height: 150px;
@@ -35,4 +34,13 @@ p{
     text-decoration: none;
     color: #FFFFFF;
     cursor: pointer;
+}
+
+#opcoes-menu {
+    background-color: #FE885C;
+    height: 16vh;
+}
+
+#opcoes-menu p a {
+    background: #ffc1aa;
 }
