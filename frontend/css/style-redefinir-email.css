@@ -24,7 +24,7 @@ body{
     text-align: center;
     padding: .4em .5em .4em .5em;
     border-radius: 90px 90px 0px 90px;;
-    color: #FFFFFF;  
+    color: #2A2962;  
     width: 260px;
     cursor: default;
 }
@@ -43,7 +43,7 @@ main{
 
 label, input{
     display: block;
-    color: #FFFFFF;
+    color: #2A2962;
 }
 
 input{
@@ -73,6 +73,7 @@ label{
     height: 100px;
     font-size: 25px;
     cursor: pointer;
+    color: #fff;
 }
 
 #form-redefinir-email:invalid #btn-ok{
