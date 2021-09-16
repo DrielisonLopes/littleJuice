@@ -37,7 +37,7 @@ h1{
     margin-top: .5rem;
 }
 
-h1, h2{
+h1, h3{
     cursor: default;
 }
 
@@ -54,10 +54,9 @@ h1, h2{
     text-align: center;
 }
 
-h2 {
-    border-radius: 40px 40px 40px 40px;
-    font-size: 24px;
-    padding: .1em;
+h3 {
+    font-size: 30px;
+    font-weight: 400;
     margin-top: 1.6em;
     color: #2A2962;
 }
