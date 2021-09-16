@@ -113,6 +113,57 @@ function renderingElementsDesktop() {
             divAgendamentos.style.removeProperty("display");
             divAgendamentos.style.display = "flex";
 
+            let agendamentos;
+            fetch(`http://127.0.0.1:3000/schedule/user?id_users=${localStorage.getItem('id_user')}`, {
+                method: 'GET',
+            }).then(response => {
+                response.json().then(data => {
+                    agendamentos = data;
+                }).then(listAgendamentosFuturos)
+            })
+
+            function listAgendamentosFuturos() {
+                agendamentos.reverse()
+
+                let ul = document.getElementById('lista-agendamentos');
+                let itemsButtons = document.getElementsByClassName('remove-agendamento');
+
+                agendamentos.forEach(agendamento => {
+                    let li = document.createElement('li');
+                    let dataAgendamento = document.createTextNode(agendamento.date.substring(0, 10).split('-').reverse().join('/'));
+                    let location;
+                    if (agendamento.location_schedule == 'sao-paulo') {
+                        location = document.createTextNode('São Paulo')
+                    } else {
+                        location = document.createTextNode('Santos')
+                    };
+                    let traco = document.createTextNode(' - ');
+                    li.appendChild(dataAgendamento);
+                    li.appendChild(traco);
+                    li.appendChild(location)
+                    ul.appendChild(li);
+
+                    let xButton = document.createElement('button');
+                    xButton.innerHTML = 'X';
+                    xButton.className = 'remove-agendamento';
+                    li.appendChild(xButton);
+                });
+
+
+                buttonEvents();
+
+                function buttonEvents() {
+                    for (let i = 0; i < itemsButtons.length; i++) {
+                        itemsButtons[i].addEventListener('click', deleteAgendamento)
+                    }
+                };
+
+                function deleteAgendamento() {
+                    confirm('Deseja cancelar esse agendamento?');
+                    this.parentNode.remove();
+                    alert('Agendamento cancelado com sucesso!')
+                }
+            }
         }
 
         //Agendamentos futuros e anteriores
@@ -134,10 +185,9 @@ function renderingElementsDesktop() {
     }
 }
 
-
 document.body.onresize = () => {
 
-    if(divAgendamentos.style.display == "flex" && document.body.clientWidth<760){
+    if (divAgendamentos.style.display == "flex" && document.body.clientWidth < 760) {
         window.location = '../pages/consultar-agendamentos.html'
     }
 
@@ -201,5 +251,4 @@ formAgendar.addEventListener("submit", function (e) {
         body: JSON.stringify(schedule)
     })
 
-    console.log(inputData.value, unidade);
 })
