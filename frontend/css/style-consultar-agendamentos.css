@@ -1,5 +1,5 @@
 body{
-    background-color: #FEBBA2 ;
+    background-color: #2A2962 ;
 }
 
 #img-menu{
@@ -12,9 +12,8 @@ p{
     text-align: center;
 }
 
-a{
+a {
     text-decoration: none;
-    color: #FFFFFF;
     cursor: pointer;
 }
 
@@ -27,24 +26,28 @@ main{
 }
 
 h1{
-    width: 275px;
-    color:#2A2962;
+    width: 175px;
+    color:#fff;
     text-align: center;
     margin-bottom: 1em;
-    font-size: 25px;
-    box-shadow: none;
+    font-size: 22px;
     height: 100%;
     cursor: default;
+}
+
+#select-futuros {
+    background-color: #FE4400;
+    border-radius: 30px;
+    height: 30px;
+    width: 16vh;
+    margin-right: 1em;
+    text-align: center;
 }
 
 #div-futuros-anteriores{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #FE4400;
-    border-radius: 40px 40px 0 40px;
-    height: 70px;
-    width: 80%;
     font-size: 22px;
     color: #FFFFFF;
     font-weight: bold;
@@ -53,6 +56,10 @@ h1{
 
 #select-futuros, #select-anteriores{
     cursor: pointer;
+}
+
+#select-ano {
+    margin: 3px 100%;
 }
 
 #filtrar-agendamentos{
@@ -100,4 +107,8 @@ li button{
     font-size: 22px;
     text-align: center;
     padding: .3em;
+}
+
+#voltar {
+    color:#fff;
 }
