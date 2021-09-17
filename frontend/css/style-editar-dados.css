@@ -103,19 +103,15 @@ label a{
     color: #D03800;
 }
 
-a{
+#link-sair{
     color: #FFFFFF;
     font-weight: 900;
 }
 
-button{
-    border: none;
-    margin-top: 6vh;
-    width: 230px;
-    height: 60px;
-    font-size: 20px;
-    background-color: #d3d3df;
+#link-editar-senha{
     color: #D03800;
+    font-size: 20px;
+    margin-top: 6vh;
 }
 
 @media only screen and (min-width: 768px){

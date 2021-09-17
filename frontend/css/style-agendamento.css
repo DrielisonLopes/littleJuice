@@ -118,6 +118,9 @@ form{
     color: #FFF;
 }
 @media only screen and (min-width: 768px){
+    #voltar{
+        display: none;
+    }
     #div-informacoes-dia-mobile{
         display: none;
     }
