@@ -17,8 +17,12 @@ function loginUser(e) {
                 localStorage.setItem("id_user", infoUser.id);
                 localStorage.setItem("name_user", infoUser.name);
                 localStorage.setItem("email_user", infoUser.email);
-                localStorage.setItem("location_user", infoUser.location)
-                window.location = '../pages/principal.html';
+                localStorage.setItem("location_user", infoUser.location);
+                if(document.body.clientWidth < 768){
+                    window.location = '../pages/principal.html';
+                } else{
+                    window.location = '../pages/agendamento.html'
+                }
             }
         });
     })

@@ -82,7 +82,6 @@ inputData.oninput = () => {
 }
 
 inputSaoPaulo.oninput = ()=>{
-    console.log('teste')
     if(inputSaoPaulo.checked && inputData.value){
         fetchInformacoesDiaDesktop(inputSaoPaulo.value)
     }
@@ -105,7 +104,6 @@ function renderingElementsDesktop() {
         }
     })
     inputSaoPaulo.addEventListener('input', ()=>{
-        console.log('teste')
         if(inputSaoPaulo.checked && inputData.value){
             fetchInformacoesDiaDesktop(inputSaoPaulo.value)
         }
